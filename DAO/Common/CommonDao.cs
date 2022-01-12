@@ -9,7 +9,6 @@ using System.Data;
 using System.IO;
 using System.Security.Cryptography;
 
-
 namespace DAO
 {
     public class CommonDao
@@ -18,6 +17,13 @@ namespace DAO
         public static DataTable tblResult;
         public static string InsertItem = string.Empty;
 
+        /// <summary>
+        /// Insert
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <param name="FieldName"></param>
+        /// <param name="TableName"></param>
+        /// <returns></returns>
         public static int  Insert(object[] arr ,string FieldName, string TableName)
         {
             int Id = 0;
@@ -66,6 +72,12 @@ namespace DAO
 
         }
 
+        /// <summary>
+        /// Get Data for data list
+        /// </summary>
+        /// <param name="commandText"></param>
+        /// <param name="commandType"></param>
+        /// <returns></returns>
         public static DataTable GetData(string commandText, CommandType commandType)
         {
 
@@ -92,6 +104,12 @@ namespace DAO
             return tblResult;
         }
 
+        /// <summary>
+        /// Update data
+        /// </summary>
+        /// <param name="UpdateQuery"></param>
+        /// <param name="arr"></param>
+        /// <returns></returns>
         public static bool Update(string UpdateQuery, object[] arr)
         {
             SqlTransaction tran;
@@ -137,6 +155,55 @@ namespace DAO
             }
         }
 
+        public static DataTable GetEditData(object[] arr, string commandText ,CommandType commandType)
+        {
+            SqlTransaction tran;
+            var conn = new SqlConnection(constr);
+            conn.Open();
+            tran = conn.BeginTransaction(IsolationLevel.ReadCommitted);
+            var cmd = new SqlCommand(commandText , conn);
+            cmd.Connection = conn;
+            if(arr is object)
+            {
+                for (int index = 1, loopTo = arr.Length - 1; index <= loopTo; index++)
+                {
+                    cmd.Parameters.AddWithValue("@" + index, arr[index - 1]);
+                    if (index != arr.Length - 1)
+                    {
+                        InsertItem += "@" + index + ",";
+                    }
+                    else
+                    {
+                        InsertItem += "@" + index;
+                    }
+                }
+            }
+            try
+            {
+                cmd.Transaction = tran;
+                var adapter = new SqlDataAdapter();
+                adapter.SelectCommand = cmd;
+                var ds = new DataSet();
+                adapter.Fill(ds);
+                tblResult = ds.Tables[0];
+                cmd.ExecuteNonQuery();
+                tran.Commit();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                tblResult = null;
+                throw ex;
+            }
+            return tblResult;
+        }
+
+        /// <summary>
+        /// Delete data
+        /// </summary>
+        /// <param name="UpdateQuery"></param>
+        /// <param name="arr"></param>
+        /// <returns></returns>
         public static bool Delete(string UpdateQuery , object[] arr)
         {
             SqlTransaction tran;
@@ -182,6 +249,11 @@ namespace DAO
             }
         }
 
+        /// <summary>
+        /// Encryption
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
         public static string Encrypt(string str)
         {
             string EncrptKey = "r00tpass";
@@ -197,6 +269,11 @@ namespace DAO
             return Convert.ToBase64String(ms.ToArray());
         }
 
+        /// <summary>
+        /// Decryption
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
         public static string Decrypt(string str)
         {
             str = str.Replace(" ", "+");

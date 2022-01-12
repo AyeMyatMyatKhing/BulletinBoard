@@ -23,8 +23,8 @@ namespace BulletinBoard_Framework_
         {
             user.Email = Convert.ToString(txtemail.Text);
             user.Password = Convert.ToString(txtpwd.Text);
-            bool loginSuccess = Services.User.UserServices.GetPostList(user);
-            if (loginSuccess == true)
+            dt = Services.User.UserServices.GetPostList(user);
+            if (dt.Rows.Count > 0)
             {
                 Response.Redirect("~/Views/Posts/PostList.aspx");
             }

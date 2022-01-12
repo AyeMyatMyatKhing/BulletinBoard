@@ -6,16 +6,31 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 
-
 namespace BulletinBoard_Framework_.Views.Posts
 {
     public partial class PostCreate : System.Web.UI.Page
     {
-
+        #region=====Data Decalaration=====
+        /// <summary>
+        /// post
+        /// </summary>
         Entities.Post.PostEntities post = new Entities.Post.PostEntities();
-        Services.Post.PostServices postservice = new Services.Post.PostServices();
-        DataTable da = new DataTable();
 
+        /// <summary>
+        /// postservice
+        /// </summary>
+        Services.Post.PostServices postservice = new Services.Post.PostServices();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        DataTable da = new DataTable();
+        #endregion
+
+        #region=====Fill Data=====
+        /// <summary>
+        /// 
+        /// </summary>
         private void InsertData()
         {
             post.Title = txtTitle.Text.ToString();
@@ -28,10 +43,14 @@ namespace BulletinBoard_Framework_.Views.Posts
             post.Updatedat = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd"));
             post.Deletedat = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd"));
         }
+        #endregion
+
+        #region=====Design Generated Code=====
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
+
 
         protected void btnCreate_Click(object sender, EventArgs e)
         {
@@ -43,5 +62,7 @@ namespace BulletinBoard_Framework_.Views.Posts
                 Response.Redirect("PostList.aspx");
             }
         }
+        #endregion
+
     }
 }

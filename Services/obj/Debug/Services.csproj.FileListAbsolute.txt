@@ -9,3 +9,14 @@ D:\asp.net tutorials\BulletinBoard(Framework)\Services\obj\Debug\Services.csproj
 D:\asp.net tutorials\BulletinBoard(Framework)\Services\obj\Debug\Services.dll
 D:\asp.net tutorials\BulletinBoard(Framework)\Services\obj\Debug\Services.pdb
 D:\asp.net tutorials\BulletinBoard(Framework)\Services\obj\Debug\Services.csproj.AssemblyReference.cache
+D:\git\BulletinBoard\Services\bin\Debug\Services.dll
+D:\git\BulletinBoard\Services\bin\Debug\Services.pdb
+D:\git\BulletinBoard\Services\bin\Debug\DAO.dll
+D:\git\BulletinBoard\Services\bin\Debug\Entities.dll
+D:\git\BulletinBoard\Services\bin\Debug\DAO.pdb
+D:\git\BulletinBoard\Services\bin\Debug\Entities.pdb
+D:\git\BulletinBoard\Services\obj\Debug\Services.csproj.AssemblyReference.cache
+D:\git\BulletinBoard\Services\obj\Debug\Services.csproj.CoreCompileInputs.cache
+D:\git\BulletinBoard\Services\obj\Debug\Services.csproj.CopyComplete
+D:\git\BulletinBoard\Services\obj\Debug\Services.dll
+D:\git\BulletinBoard\Services\obj\Debug\Services.pdb

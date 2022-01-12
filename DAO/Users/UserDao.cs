@@ -10,6 +10,11 @@ namespace DAO.Users
 {
     public class UserDao
     {
+        /// <summary>
+        /// Insert user data
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         public static int Insert(UserEntities user)
         {
             try
@@ -44,6 +49,10 @@ namespace DAO.Users
             return Convert.ToInt32(false);
         }
 
+        /// <summary>
+        /// Get user data
+        /// </summary>
+        /// <returns></returns>
         public static DataTable GetData()
         {
             try
@@ -56,6 +65,11 @@ namespace DAO.Users
             }
         }
 
+        /// <summary>
+        /// Delete user data
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         public static bool Delete(UserEntities user)
         {
             try
@@ -71,6 +85,11 @@ namespace DAO.Users
             }
         }
 
+        /// <summary>
+        /// Update user data
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         public static bool Update(UserEntities user)
         {
             try
@@ -89,15 +108,21 @@ namespace DAO.Users
                 throw ex;
             }
         }
-        public static bool GetPostList(UserEntities user)
+
+        /// <summary>
+        /// for login 
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        public static DataTable GetPostList(UserEntities user)
         {
             try
             {
                 var arr = new Object[3];
                 arr[0] = user.Email;
                 arr[1] = user.Password;
-                CommonDao.Update("select count(1) from users where email=@1 and password=@2", arr);
-                return true;
+                var dt = CommonDao.GetEditData(arr , "select * from users where email=@1 and password=@2", CommandType.Text);
+                return dt;
                 
             }
             catch(Exception ex)
@@ -106,6 +131,11 @@ namespace DAO.Users
             }
         }
 
+        /// <summary>
+        /// Get user data for edit
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         public static bool GetUserData(UserEntities user)
         {
             try

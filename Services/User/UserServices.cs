@@ -61,7 +61,7 @@ namespace Services.User
             }
         }
 
-        public static bool GetPostList(UserEntities user)
+        public static DataTable GetPostList(UserEntities user)
         {
             try
             {
