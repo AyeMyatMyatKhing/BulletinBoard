@@ -1,0 +1,5 @@
+D:\asp.net tutorials\BulletinBoard(Framework)\Entities\bin\Debug\Entities.dll
+D:\asp.net tutorials\BulletinBoard(Framework)\Entities\bin\Debug\Entities.pdb
+D:\asp.net tutorials\BulletinBoard(Framework)\Entities\obj\Debug\Entities.csproj.CoreCompileInputs.cache
+D:\asp.net tutorials\BulletinBoard(Framework)\Entities\obj\Debug\Entities.dll
+D:\asp.net tutorials\BulletinBoard(Framework)\Entities\obj\Debug\Entities.pdb

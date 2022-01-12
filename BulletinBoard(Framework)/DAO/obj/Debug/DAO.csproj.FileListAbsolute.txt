@@ -1,0 +1,9 @@
+D:\asp.net tutorials\BulletinBoard(Framework)\DAO\bin\Debug\DAO.dll
+D:\asp.net tutorials\BulletinBoard(Framework)\DAO\bin\Debug\DAO.pdb
+D:\asp.net tutorials\BulletinBoard(Framework)\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+D:\asp.net tutorials\BulletinBoard(Framework)\DAO\obj\Debug\DAO.dll
+D:\asp.net tutorials\BulletinBoard(Framework)\DAO\obj\Debug\DAO.pdb
+D:\asp.net tutorials\BulletinBoard(Framework)\DAO\bin\Debug\Entities.dll
+D:\asp.net tutorials\BulletinBoard(Framework)\DAO\bin\Debug\Entities.pdb
+D:\asp.net tutorials\BulletinBoard(Framework)\DAO\obj\Debug\DAO.csproj.CopyComplete
+D:\asp.net tutorials\BulletinBoard(Framework)\DAO\obj\Debug\DAO.csproj.AssemblyReference.cache
