@@ -73,7 +73,7 @@ namespace Services.User
             }
         }
 
-        public static bool GetUserData(UserEntities user)
+        public static DataTable GetUserData(UserEntities user)
         {
 
             try

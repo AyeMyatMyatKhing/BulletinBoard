@@ -57,7 +57,7 @@ namespace DAO.Users
         {
             try
             {
-                return CommonDao.GetData("select id,name,email,type,address from users where is_delete=0", CommandType.Text);
+                return CommonDao.GetData("select id,name,email,phone,address from users where is_delete=0", CommandType.Text);
             }
             catch(Exception ex)
             {
@@ -136,14 +136,14 @@ namespace DAO.Users
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
-        public static bool GetUserData(UserEntities user)
+        public static DataTable GetUserData(UserEntities user)
         {
             try
             {
                 var arr = new object[2];
                 arr[0] = user.Id;
-                CommonDao.Update("select name,email,phone,address from users where id=@1", arr);
-                return true;
+                var dt = CommonDao.GetEditData(arr, "select name,email,phone,address from users where id=@1", CommandType.Text);
+                return dt;
             }
             catch (Exception ex)
             {

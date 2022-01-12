@@ -35,7 +35,7 @@ namespace Services.Post
             }
         }
 
-        public static bool EditPost(PostEntities post)
+        public static DataTable EditPost(PostEntities post)
         {
 
             try

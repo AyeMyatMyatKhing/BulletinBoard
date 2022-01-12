@@ -52,16 +52,14 @@ namespace DAO.Post
             }
         }
 
-        public static bool EditData(PostEntities post)
+        public static DataTable EditData(PostEntities post)
         {
             try
             {
-                var arr = new object[4];
-                arr[0] = post.Title;
-                arr[1] = post.Description;
-                arr[2] = post.Id;
-                CommonDao.Update("select title,description from posts where id =@3", arr);
-                return true;
+                var arr = new object[2];
+                arr[0] = post.Id;
+                var dt = CommonDao.GetEditData(arr, "select title,description from posts where id =@1", CommandType.Text);
+                return dt;
             }
             catch (Exception ex)
             {

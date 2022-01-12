@@ -5,9 +5,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
-using System.Configuration;
-using System.Data.SqlClient;
-
 
 namespace BulletinBoard_Framework_.Views.Posts
 {
@@ -16,10 +13,9 @@ namespace BulletinBoard_Framework_.Views.Posts
         Entities.Post.PostEntities post = new Entities.Post.PostEntities();
         Services.Post.PostServices postservice = new Services.Post.PostServices();
         DataTable dt = new DataTable();
-        int id;
         protected void Page_Load(object sender, EventArgs e)
         {
-            id = int.Parse(Request.QueryString["id"].ToString());
+           
             if (!IsPostBack)
             {
                 BindTextBoxvalues();
@@ -28,15 +24,13 @@ namespace BulletinBoard_Framework_.Views.Posts
 
         public void BindTextBoxvalues()
         {
-            string strcon = ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString;
-            SqlConnection con = new SqlConnection(strcon);
-            con.Open();
-            SqlCommand cmd = new SqlCommand("select title,description from posts where id = " + id, con);
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            txtTitle.Text = dt.Rows[0][0].ToString();
-            txtDescription.Text = dt.Rows[0][1].ToString();
+            post.Id = int.Parse(Request.QueryString["id"].ToString());
+            dt = Services.Post.PostServices.EditPost(post);
+            if (dt.Rows.Count > 0)
+            {
+                txtTitle.Text = dt.Rows[0][0].ToString();
+                txtDescription.Text = dt.Rows[0][1].ToString();
+            }
         }
 
         protected void btnUpdate_Click(object sender, EventArgs e)
