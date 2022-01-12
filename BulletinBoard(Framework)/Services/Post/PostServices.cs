@@ -48,6 +48,18 @@ namespace Services.Post
             }
         }
 
+        public static DataTable GetEditPost(PostEntities post)
+        {
+            try
+            {
+                return DAO.Post.PostDao.GetEditPost(post);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public static bool Update(PostEntities post)
         {
             try

@@ -48,14 +48,14 @@ namespace BulletinBoard_Framework_.Views.Users
             string strcon = ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString;
             SqlConnection con = new SqlConnection(strcon);
             con.Open();
-            SqlCommand cmd = new SqlCommand("select name,email,phone,dob,address from users where id = " + id, con);
+            SqlCommand cmd = new SqlCommand("select name,email,phone,address from users where id = " + id, con);
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             txtname.Text = dt.Rows[0][0].ToString();
             txtemail.Text = dt.Rows[0][1].ToString();
             txtphone.Text = dt.Rows[0][2].ToString();
-            txtaddr.Text = dt.Rows[0][4].ToString();
+            txtaddr.Text = dt.Rows[0][3].ToString();
         }
 
 

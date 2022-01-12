@@ -48,7 +48,7 @@ namespace DAO.Users
         {
             try
             {
-                return CommonDao.GetData("select id,name,email,type,address from users where is_delete=0", CommandType.Text);
+                return CommonDao.GetData("select id,name,email,phone,address from users where is_delete=0", CommandType.Text);
             }
             catch(Exception ex)
             {

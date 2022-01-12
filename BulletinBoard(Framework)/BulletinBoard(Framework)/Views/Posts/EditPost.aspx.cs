@@ -19,24 +19,43 @@ namespace BulletinBoard_Framework_.Views.Posts
         int id;
         protected void Page_Load(object sender, EventArgs e)
         {
-            id = int.Parse(Request.QueryString["id"].ToString());
+            //id = int.Parse(Request.QueryString["id"].ToString());
             if (!IsPostBack)
             {
-                BindTextBoxvalues();
+                //BindTextBoxvalues();
+                BindTextBoxValues();
             }
         }
 
-        public void BindTextBoxvalues()
+        //public void BindTextBoxvalues()
+        //{
+        //    string strcon = ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString;
+        //    SqlConnection con = new SqlConnection(strcon);
+        //    con.Open();
+        //    SqlCommand cmd = new SqlCommand("select title,description from posts where id = " + id, con);
+        //    DataTable dt = new DataTable();
+        //    SqlDataAdapter da = new SqlDataAdapter(cmd);
+        //    da.Fill(dt);
+        //    txtTitle.Text = dt.Rows[0][0].ToString();
+        //    txtDescription.Text = dt.Rows[0][1].ToString();
+        //}
+
+        public void TextBoxValues()
         {
-            string strcon = ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString;
-            SqlConnection con = new SqlConnection(strcon);
-            con.Open();
-            SqlCommand cmd = new SqlCommand("select title,description from posts where id = " + id, con);
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
+            bool update = Services.Post.PostServices.EditPost(post);
+            if(update == true)
+            {
+                post.Id = int.Parse(Request.QueryString["id"].ToString());
+            }
+        }
+
+        public void BindTextBoxValues()
+        {
+           
+            dt = Services.Post.PostServices.GetEditPost(post);
             txtTitle.Text = dt.Rows[0][0].ToString();
             txtDescription.Text = dt.Rows[0][1].ToString();
+
         }
 
         protected void btnUpdate_Click(object sender, EventArgs e)

@@ -24,7 +24,7 @@
                     <asp:BoundField DataField="id" HeaderText="ID"/>
                     <asp:BoundField  DataField="name" HeaderText="Name"/>
                     <asp:BoundField DataField="email" HeaderText="Email" />
-                    <asp:BoundField  DataField="type" HeaderText="Type"/>
+                    <asp:BoundField  DataField="phone" HeaderText="Phone"/>
                     <asp:BoundField DataField="address" HeaderText="Address" />
                     <asp:TemplateField>
                         <ItemTemplate>

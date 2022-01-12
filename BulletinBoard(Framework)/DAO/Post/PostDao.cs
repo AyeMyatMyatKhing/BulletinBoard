@@ -56,17 +56,35 @@ namespace DAO.Post
         {
             try
             {
-                var arr = new object[4];
-                arr[0] = post.Title;
-                arr[1] = post.Description;
-                arr[2] = post.Id;
-                CommonDao.Update("select title,description from posts where id =@3", arr);
+                var arr = new object[2];
+                arr[0] = post.Id;
+                CommonDao.Update("select title,description from posts where id =@1", arr);
                 return true;
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+        }
+
+        public static DataTable GetEditPost(PostEntities post)
+        {
+            try
+            {
+
+                bool edit = DAO.Post.PostDao.EditData(post);
+                dt = CommonDao.GetData("select title,description from posts", CommandType.Text);
+                if (edit == true)
+                {
+                    return dt;
+                }
+               
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            
         }
 
         public static bool Update(PostEntities post)

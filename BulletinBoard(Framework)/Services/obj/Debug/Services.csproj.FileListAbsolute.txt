@@ -9,3 +9,14 @@ D:\asp.net tutorials\BulletinBoard(Framework)\Services\obj\Debug\Services.csproj
 D:\asp.net tutorials\BulletinBoard(Framework)\Services\obj\Debug\Services.dll
 D:\asp.net tutorials\BulletinBoard(Framework)\Services\obj\Debug\Services.pdb
 D:\asp.net tutorials\BulletinBoard(Framework)\Services\obj\Debug\Services.csproj.AssemblyReference.cache
+D:\asp.net\BulletinBoard(Framework)\Services\bin\Debug\Services.dll
+D:\asp.net\BulletinBoard(Framework)\Services\bin\Debug\Services.pdb
+D:\asp.net\BulletinBoard(Framework)\Services\bin\Debug\DAO.dll
+D:\asp.net\BulletinBoard(Framework)\Services\bin\Debug\Entities.dll
+D:\asp.net\BulletinBoard(Framework)\Services\bin\Debug\DAO.pdb
+D:\asp.net\BulletinBoard(Framework)\Services\bin\Debug\Entities.pdb
+D:\asp.net\BulletinBoard(Framework)\Services\obj\Debug\Services.csproj.AssemblyReference.cache
+D:\asp.net\BulletinBoard(Framework)\Services\obj\Debug\Services.csproj.CoreCompileInputs.cache
+D:\asp.net\BulletinBoard(Framework)\Services\obj\Debug\Services.csproj.CopyComplete
+D:\asp.net\BulletinBoard(Framework)\Services\obj\Debug\Services.dll
+D:\asp.net\BulletinBoard(Framework)\Services\obj\Debug\Services.pdb
