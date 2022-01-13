@@ -85,5 +85,17 @@ namespace Services.User
                 throw ex;
             }
         }
+
+        public static DataTable GetUserName(UserEntities user)
+        {
+            try
+            {
+                return DAO.Users.UserDao.GetUserName(user);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

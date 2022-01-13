@@ -19,7 +19,6 @@ namespace Entities.Post
         private DateTime updatedat;
         private DateTime deletedat;
 
-
         public void PostData(int id, string title, string description, int status, int createuserid, int updateduserid, int deleteduserid, DateTime createdat, DateTime updatedat, DateTime deletedat)
         {
             id = id;

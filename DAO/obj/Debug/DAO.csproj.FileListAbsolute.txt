@@ -15,3 +15,4 @@ D:\git\BulletinBoard\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
 D:\git\BulletinBoard\DAO\obj\Debug\DAO.csproj.CopyComplete
 D:\git\BulletinBoard\DAO\obj\Debug\DAO.dll
 D:\git\BulletinBoard\DAO\obj\Debug\DAO.pdb
+D:\git\BulletinBoard\DAO\obj\Debug\DAO.csproj.AssemblyReference.cache

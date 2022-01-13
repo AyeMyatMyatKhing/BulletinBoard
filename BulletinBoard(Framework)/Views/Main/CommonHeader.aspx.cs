@@ -11,10 +11,12 @@ namespace BulletinBoard_Framework_.Views.Main
     public partial class CommonHeader : System.Web.UI.Page
     {
         Entities.Post.PostEntities post = new Entities.Post.PostEntities();
+        Entities.User.UserEntities userEntity = new Entities.User.UserEntities();
         Services.Post.PostServices postservice = new Services.Post.PostServices();
         DataTable dt = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
+            UserName.Text = Request.QueryString["name"].ToString();
             if (!IsPostBack)
             {
                 GetData();
@@ -71,7 +73,8 @@ namespace BulletinBoard_Framework_.Views.Main
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/Posts/PostCreate.aspx");
+            userEntity.Id = int.Parse(Request.QueryString["id"].ToString()); ;
+            Response.Redirect("~/Views/Posts/PostCreate.aspx?id="+userEntity.Id);
         }
 
         protected void LinkButton1_Click(object sender, EventArgs e)

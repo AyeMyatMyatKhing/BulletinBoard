@@ -21,13 +21,14 @@ namespace BulletinBoard_Framework_
 
         protected void btnlogin_Click(object sender, EventArgs e)
         {
-            //user.Name = dt.Rows[0][0].ToString();
             user.Email = Convert.ToString(txtemail.Text);
             user.Password = Convert.ToString(txtpwd.Text);
             dt = Services.User.UserServices.GetPostList(user);
             if (dt.Rows.Count > 0)
             {
-                Response.Redirect("~/Views/Main/CommonHeader.aspx");
+                user.Id = Convert.ToInt32(dt.Rows[0][0].ToString());
+                user.Name = dt.Rows[0][1].ToString();
+                Response.Redirect("~/Views/Main/CommonHeader.aspx?name=" + user.Name);
             }
             else
             {

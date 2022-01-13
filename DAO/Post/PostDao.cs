@@ -10,6 +10,12 @@ namespace DAO.Post
 {
     public class PostDao
     {
+        #region=====Insert,Update,Delete=====
+        /// <summary>
+        /// Insert post data
+        /// </summary>
+        /// <param name="post"></param>
+        /// <returns></returns>
         public static int Insert(PostEntities post)
         {
             try
@@ -26,7 +32,7 @@ namespace DAO.Post
                 arr[8] = post.Deletedat;
 
                 int id = (int)CommonDao.Insert(arr, "title,description,status,create_user_id,updated_user_id,deleted_user_id,created_at,updated_at,deleted_at", "posts");
-                if(id != 0)
+                if (id != 0)
                 {
                     return id;
                 }
@@ -39,13 +45,16 @@ namespace DAO.Post
 
         }
 
-
+        /// <summary>
+        /// Get post data
+        /// </summary>
+        /// <returns></returns>
         public static DataTable GetAllData()
         {
             try
             {
-                return CommonDao.GetData("select id,title,description,create_user_id,created_at from posts where status=0", CommandType.Text);
-                //return CommonDao.GetData("Select posts.id,posts.title,posts.description,[users].name,convert(varchar,  posts.created_at, 111)As PostedDate from posts Inner Join [users] on posts.create_user_id =[users].create_user_id where posts.status=0", CommandType.Text);
+                //return CommonDao.GetData("select id,title,description,create_user_id,created_at from posts where status=0 and create_user_id=@1", CommandType.Text);
+                return CommonDao.GetData("select posts.id,posts.title,posts.description,[users].name,convert(varchar,  posts.created_at, 111)as PostedDate from posts inner join [users] on posts.create_user_id = [users].create_user_id where posts.status=0", CommandType.Text);
             }
             catch (Exception ex)
             {
@@ -53,6 +62,11 @@ namespace DAO.Post
             }
         }
 
+        /// <summary>
+        /// Get edit data
+        /// </summary>
+        /// <param name="post"></param>
+        /// <returns></returns>
         public static DataTable EditData(PostEntities post)
         {
             try
@@ -68,6 +82,11 @@ namespace DAO.Post
             }
         }
 
+        /// <summary>
+        /// Update data
+        /// </summary>
+        /// <param name="post"></param>
+        /// <returns></returns>
         public static bool Update(PostEntities post)
         {
             try
@@ -85,6 +104,11 @@ namespace DAO.Post
             }
         }
 
+        /// <summary>
+        /// Delete data
+        /// </summary>
+        /// <param name="post"></param>
+        /// <returns></returns>
         public static bool Delete(PostEntities post)
         {
             try
@@ -99,6 +123,6 @@ namespace DAO.Post
                 throw ex;
             }
         }
-
+        #endregion
     }
 }

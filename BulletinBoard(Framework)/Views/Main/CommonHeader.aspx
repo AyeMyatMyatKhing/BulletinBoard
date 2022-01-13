@@ -19,7 +19,7 @@
                     <asp:LinkButton ID="LinkButton2" runat="server" class="link">Posts</asp:LinkButton>
                 </li>
             </ul>
-            <div class="RightNavbar">
+            <div class="RightNavbar" style="margin-left:56%">
                 <ul >
                     <li>
                        <asp:LinkButton ID="UserName" runat="server" class="link"></asp:LinkButton>
@@ -50,8 +50,8 @@
                     <asp:BoundField DataField="id" HeaderText="ID"/>
                     <asp:BoundField DataField="title" HeaderText="Post Title"/>
                     <asp:BoundField DataField="description" HeaderText="Post Description"/>
-                    <asp:BoundField DataField="create_user_id" HeaderText="Posted User"/>
-                    <asp:BoundField DataField="created_at" HeaderText="Posted Date"/>
+                    <asp:BoundField DataField="name" HeaderText="Posted User"/>
+                    <asp:BoundField DataField="PostedDate" HeaderText="Posted Date"/>
                     <asp:TemplateField>
                         <ItemTemplate>
                             <asp:Button  ID="btnEdit" runat="server" Text="Edit" CommandName="EditButton" CommandArgument="<%#((GridViewRow)Container).RowIndex %>"/>

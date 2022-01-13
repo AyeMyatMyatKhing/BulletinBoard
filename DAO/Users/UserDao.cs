@@ -150,5 +150,20 @@ namespace DAO.Users
                 throw ex;
             }
         }
+
+        public static DataTable GetUserName(UserEntities user)
+        {
+            try
+            {
+                var arr = new object[2];
+                arr[0] = user.Id;
+                var dt = CommonDao.GetEditData(arr, "select name from users where id=@1", CommandType.Text);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
