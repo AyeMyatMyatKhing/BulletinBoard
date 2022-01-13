@@ -24,12 +24,12 @@ namespace BulletinBoard_Framework_.Views.Posts
         /// <summary>
         /// 
         /// </summary>
-        DataTable da = new DataTable();
+        DataTable dt = new DataTable();
         #endregion
 
         #region=====Fill Data=====
         /// <summary>
-        /// 
+        /// insert post data
         /// </summary>
         private void InsertData()
         {
@@ -51,18 +51,22 @@ namespace BulletinBoard_Framework_.Views.Posts
 
         }
 
-
         protected void btnCreate_Click(object sender, EventArgs e)
         {
             InsertData();
             int id = Services.Post.PostServices.Insert(post);
-            if (id > 0)
+            if (id != 0)
             {
                 Response.Write("<script>alert('Data inserted!')</script>");
-                Response.Redirect("PostList.aspx");
+                Response.Redirect("~/Views/Main/CommonHeader.aspx");
             }
         }
-        #endregion
 
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Views/Main/CommonHeader.aspx");
+        }
+        #endregion
     }
 }

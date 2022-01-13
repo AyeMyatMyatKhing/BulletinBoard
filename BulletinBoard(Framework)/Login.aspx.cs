@@ -21,16 +21,17 @@ namespace BulletinBoard_Framework_
 
         protected void btnlogin_Click(object sender, EventArgs e)
         {
+            //user.Name = dt.Rows[0][0].ToString();
             user.Email = Convert.ToString(txtemail.Text);
             user.Password = Convert.ToString(txtpwd.Text);
             dt = Services.User.UserServices.GetPostList(user);
             if (dt.Rows.Count > 0)
             {
-                Response.Redirect("~/Views/Posts/PostList.aspx");
+                Response.Redirect("~/Views/Main/CommonHeader.aspx");
             }
             else
             {
-                Label3.Text = "Your username and password is incorrect";
+                Label3.Text = "Your username or password is incorrect.";
                 Label3.ForeColor = System.Drawing.Color.Red;
             }
         }

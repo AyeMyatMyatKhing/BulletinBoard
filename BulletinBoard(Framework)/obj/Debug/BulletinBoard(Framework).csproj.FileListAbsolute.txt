@@ -123,8 +123,8 @@ D:\git\BulletinBoard\BulletinBoard(Framework)\bin\DAO.pdb
 D:\git\BulletinBoard\BulletinBoard(Framework)\bin\Entities.pdb
 D:\git\BulletinBoard\BulletinBoard(Framework)\bin\Services.pdb
 D:\git\BulletinBoard\BulletinBoard(Framework)\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\git\BulletinBoard\BulletinBoard(Framework)\obj\Debug\BulletinBoard(Framework).csproj.AssemblyReference.cache
 D:\git\BulletinBoard\BulletinBoard(Framework)\obj\Debug\BulletinBoard(Framework).csproj.CoreCompileInputs.cache
 D:\git\BulletinBoard\BulletinBoard(Framework)\obj\Debug\BulletinBoard(Framework).csproj.CopyComplete
 D:\git\BulletinBoard\BulletinBoard(Framework)\obj\Debug\BulletinBoard(Framework).dll
 D:\git\BulletinBoard\BulletinBoard(Framework)\obj\Debug\BulletinBoard(Framework).pdb
+D:\git\BulletinBoard\BulletinBoard(Framework)\obj\Debug\BulletinBoard(Framework).csproj.AssemblyReference.cache

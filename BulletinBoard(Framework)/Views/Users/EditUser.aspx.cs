@@ -51,5 +51,10 @@ namespace BulletinBoard_Framework_.Views.Users
             }
             Response.Redirect("UserList.aspx");
         }
+
+        protected void btncancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("UserList.aspx");
+        }
     }
 }

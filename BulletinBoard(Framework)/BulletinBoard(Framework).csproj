@@ -79,9 +79,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Login.aspx" />
+    <Content Include="Resources\css\common\common.css" />
+    <Content Include="Views\Main\CommonHeader.aspx" />
     <Content Include="Views\Posts\EditPost.aspx" />
     <Content Include="Views\Posts\PostCreate.aspx" />
-    <Content Include="Views\Posts\PostList.aspx" />
     <Content Include="Views\Users\CreateUser.aspx" />
     <Content Include="Views\Users\EditUser.aspx" />
     <Content Include="Views\Users\UserList.aspx" />
@@ -90,50 +91,43 @@
   <ItemGroup>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Main\CommonHeader.aspx.cs">
+      <DependentUpon>CommonHeader.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Main\CommonHeader.aspx.designer.cs">
+      <DependentUpon>CommonHeader.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Posts\EditPost.aspx.cs">
       <DependentUpon>EditPost.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Posts\EditPost.aspx.designer.cs">
       <DependentUpon>EditPost.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Posts\PostCreate.aspx.cs">
       <DependentUpon>PostCreate.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Posts\PostCreate.aspx.designer.cs">
       <DependentUpon>PostCreate.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Posts\PostList.aspx.cs">
-      <DependentUpon>PostList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Posts\PostList.aspx.designer.cs">
-      <DependentUpon>PostList.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Views\Users\CreateUser.aspx.cs">
       <DependentUpon>CreateUser.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Users\CreateUser.aspx.designer.cs">
       <DependentUpon>CreateUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Users\EditUser.aspx.cs">
       <DependentUpon>EditUser.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Users\EditUser.aspx.designer.cs">
       <DependentUpon>EditUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Users\UserList.aspx.cs">
       <DependentUpon>UserList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Users\UserList.aspx.designer.cs">
       <DependentUpon>UserList.aspx</DependentUpon>

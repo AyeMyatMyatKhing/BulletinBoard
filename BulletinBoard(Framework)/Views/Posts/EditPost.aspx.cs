@@ -43,7 +43,12 @@ namespace BulletinBoard_Framework_.Views.Posts
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "ShowSuccess", "javascript:alert('Data updated successfully');", true);
             }
-            Response.Redirect("PostList.aspx");
+            Response.Redirect("~/Views/Main/CommonHeader.aspx");
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Views/Main/CommonHeader.aspx");
         }
     }
 }
