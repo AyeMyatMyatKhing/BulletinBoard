@@ -37,7 +37,6 @@ namespace BulletinBoard_Framework_.Views.Posts
         /// </summary>
         private void InsertData()
         {
-            dt = Services.User.UserServices.GetUserName(userEntity);
             post.Title = txtTitle.Text.ToString();
             post.Description = txtDescription.Text.ToString();
             post.Status = 0;
@@ -60,12 +59,12 @@ namespace BulletinBoard_Framework_.Views.Posts
         protected void btnCreate_Click(object sender, EventArgs e)
         {
             InsertData();
-            int id = Services.Post.PostServices.Insert(post);
+            int id = Services.Post.PostServices.InsertData(post);
         if (id != 0)
         {
             Response.Write("<script>alert('Data inserted!')</script>");
 
-                //Response.Redirect("~/Views/Main/CommonHeader.aspx");
+                Response.Redirect("~/Views/Main/CommonHeader.aspx");
             }
         }
 

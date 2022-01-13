@@ -16,7 +16,7 @@ namespace BulletinBoard_Framework_.Views.Main
         DataTable dt = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
-            UserName.Text = Request.QueryString["name"].ToString();
+            //UserName.Text = Request.QueryString["name"].ToString();
             if (!IsPostBack)
             {
                 GetData();
@@ -73,7 +73,7 @@ namespace BulletinBoard_Framework_.Views.Main
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            userEntity.Id = int.Parse(Request.QueryString["id"].ToString()); ;
+            userEntity.Id = int.Parse(Request.QueryString["id"].ToString());
             Response.Redirect("~/Views/Posts/PostCreate.aspx?id="+userEntity.Id);
         }
 

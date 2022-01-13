@@ -28,7 +28,7 @@ namespace BulletinBoard_Framework_
             {
                 user.Id = Convert.ToInt32(dt.Rows[0][0].ToString());
                 user.Name = dt.Rows[0][1].ToString();
-                Response.Redirect("~/Views/Main/CommonHeader.aspx?name=" + user.Name);
+                Response.Redirect("~/Views/Main/CommonHeader.aspx?id=" + user.Id);
             }
             else
             {

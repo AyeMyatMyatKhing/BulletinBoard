@@ -249,6 +249,54 @@ namespace DAO
             }
         }
 
+        public static int InsertData(object[] arr, string InsertQuery)
+        {
+            int Id = 0;
+            SqlTransaction tran;
+            var cn = new SqlConnection();
+            cn.ConnectionString = constr;
+            cn.Open();
+            tran = cn.BeginTransaction(IsolationLevel.ReadCommitted);
+            var cmd = new SqlCommand();
+            cmd.Connection = cn;
+            if (arr is object)
+            {
+                for (int index = 1, loopTo = arr.Length - 1; index <= loopTo; index++)
+                {
+                    cmd.Parameters.AddWithValue("@" + index, arr[index - 1]);
+                    if (index != arr.Length - 1)
+                    {
+                        InsertItem += "@" + index + ",";
+                    }
+                    else
+                    {
+                        InsertItem += "@" + index;
+                    }
+                }
+            }
+
+            try
+            {
+                cmd.CommandText = InsertQuery;
+                cmd.Transaction = tran;
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = "";
+                cmd.CommandText = "SELECT @@IDENTITY";
+                Id = Convert.ToInt32(cmd.ExecuteScalar());
+                tran.Commit();
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                tran.Rollback();
+                tblResult = null;
+                throw ex;
+            }
+
+            return Id;
+
+        }
+
         /// <summary>
         /// Encryption
         /// </summary>

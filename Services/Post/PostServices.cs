@@ -10,12 +10,25 @@ namespace Services.Post
 {
     public class PostServices
     {
-        public static int Insert(PostEntities post)
+        //public static int Insert(PostEntities post)
+        //{
+        //    try
+        //    {
+        //        var dt = new DAO.Post.PostDao();
+        //        return DAO.Post.PostDao.Insert(post);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //}
+
+        public static int InsertData(PostEntities post)
         {
             try
             {
-                var dt = new DAO.Post.PostDao();
-                return DAO.Post.PostDao.Insert(post);
+                //var dt = new DAO.Post.PostDao();
+                return DAO.Post.PostDao.InsertData(post);
             }
             catch (Exception ex)
             {

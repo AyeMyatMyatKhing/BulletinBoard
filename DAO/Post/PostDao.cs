@@ -16,7 +16,36 @@ namespace DAO.Post
         /// </summary>
         /// <param name="post"></param>
         /// <returns></returns>
-        public static int Insert(PostEntities post)
+        //public static int Insert(PostEntities post)
+        //{
+        //    try
+        //    {
+        //        var arr = new object[10];
+        //        arr[0] = post.Title;
+        //        arr[1] = post.Description;
+        //        arr[2] = post.Status;
+        //        arr[3] = post.Createuserid;
+        //        arr[4] = post.Updateduserid;
+        //        arr[5] = post.Deleteduserid;
+        //        arr[6] = post.Createdat;
+        //        arr[7] = post.Updatedat;
+        //        arr[8] = post.Deletedat;
+
+        //        int id = (int)CommonDao.Insert(arr, "title,description,status,create_user_id,updated_user_id,deleted_user_id,created_at,updated_at,deleted_at", "posts");
+        //        if (id != 0)
+        //        {
+        //            return id;
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //    return Convert.ToInt32(false);
+
+        //}
+
+        public static int InsertData(PostEntities post)
         {
             try
             {
@@ -31,7 +60,7 @@ namespace DAO.Post
                 arr[7] = post.Updatedat;
                 arr[8] = post.Deletedat;
 
-                int id = (int)CommonDao.Insert(arr, "title,description,status,create_user_id,updated_user_id,deleted_user_id,created_at,updated_at,deleted_at", "posts");
+                int id = (int)CommonDao.InsertData(arr, "insert into posts values (@1,@2,@3,@4,@5,@6,@7,@8,@9)");
                 if (id != 0)
                 {
                     return id;
@@ -42,7 +71,6 @@ namespace DAO.Post
                 throw ex;
             }
             return Convert.ToInt32(false);
-
         }
 
         /// <summary>
@@ -54,7 +82,7 @@ namespace DAO.Post
             try
             {
                 //return CommonDao.GetData("select id,title,description,create_user_id,created_at from posts where status=0 and create_user_id=@1", CommandType.Text);
-                return CommonDao.GetData("select posts.id,posts.title,posts.description,[users].name,convert(varchar,  posts.created_at, 111)as PostedDate from posts inner join [users] on posts.create_user_id = [users].create_user_id where posts.status=0", CommandType.Text);
+                return CommonDao.GetData("select posts.id,posts.title,posts.description,[users].name,convert(varchar,  posts.created_at, 111)as PostedDate from posts inner join [users] on posts.create_user_id = [users].id where posts.status=0", CommandType.Text);
             }
             catch (Exception ex)
             {
