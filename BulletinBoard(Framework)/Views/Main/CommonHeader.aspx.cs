@@ -10,19 +10,25 @@ namespace BulletinBoard_Framework_.Views.Main
 {
     public partial class CommonHeader : System.Web.UI.Page
     {
+        #region=====Data declaration=====
+        /// <summary>
+        /// post entity
+        /// </summary>
         Entities.Post.PostEntities post = new Entities.Post.PostEntities();
+        /// <summary>
+        /// user entity
+        /// </summary>
         Entities.User.UserEntities userEntity = new Entities.User.UserEntities();
+        /// <summary>
+        /// post service
+        /// </summary>
         Services.Post.PostServices postservice = new Services.Post.PostServices();
+        /// <summary>
+        /// data table
+        /// </summary>
         DataTable dt = new DataTable();
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            //UserName.Text = Request.QueryString["name"].ToString();
-            if (!IsPostBack)
-            {
-                GetData();
-            }
-        }
-
+        #endregion
+        #region======Fill data=====
         public void GetData()
         {
             dt = Services.Post.PostServices.GetAllData();
@@ -33,18 +39,43 @@ namespace BulletinBoard_Framework_.Views.Main
                 GridView1.Visible = true;
             }
         }
+        #endregion
 
+        public void GetUserName()
+        {
+            userEntity.Id = int.Parse(Request.QueryString["id"].ToString());
+            dt = Services.User.UserServices.GetUserData(userEntity);
+            UserName.Text = dt.Rows[0][0].ToString();
+        }
+
+        #region=====Design generated code=====
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                GetData();
+            }
+        }
+        /// <summary>
+        /// Edit command
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName == "EditButton")
-          {
-            int index = Convert.ToInt32(e.CommandArgument);
-            GridViewRow row = GridView1.Rows[index];
-            post.Id = Convert.ToInt32(row.Cells[0].Text);
-            Response.Redirect("~/Views/Posts/EditPost.aspx?id=" + post.Id);
-          }
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
+                GridViewRow row = GridView1.Rows[index];
+                post.Id = Convert.ToInt32(row.Cells[0].Text);
+                Response.Redirect("~/Views/Posts/EditPost.aspx?id="+post.Id);
+            }
         }
-
+        /// <summary>
+        /// bound data to gridview
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
@@ -59,7 +90,11 @@ namespace BulletinBoard_Framework_.Views.Main
                 }
             }
         }
-
+        /// <summary>
+        /// delete rows of gridview
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             post.Status = 1;
@@ -70,16 +105,34 @@ namespace BulletinBoard_Framework_.Views.Main
                 GetData();
             }
         }
-
+        /// <summary>
+        /// create post
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Button1_Click(object sender, EventArgs e)
         {
             userEntity.Id = int.Parse(Request.QueryString["id"].ToString());
-            Response.Redirect("~/Views/Posts/PostCreate.aspx?id="+userEntity.Id);
+            Server.Transfer("~/Views/Posts/PostCreate.aspx");
         }
-
+        /// <summary>
+        /// user list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/Users/UserList.aspx");
+            Server.Transfer("~/Views/Users/UserList.aspx");
         }
+        /// <summary>
+        /// logout from common screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void LinkButton3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Login.aspx");
+        }
+        #endregion
     }
 }

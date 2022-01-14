@@ -10,7 +10,9 @@
 <body>
     <form id="form1" runat="server">
         <div class="showList">
-            <h2>User List</h2>
+            <h2>User List&nbsp;
+                <asp:Button ID="btnBack" runat="server" Text="Back" class="button" OnClick="btnBack_Click"/>
+            </h2>
             <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" AutoGenerateColumns="False" OnRowDataBound="GridView1_RowDataBound" OnRowDeleting="GridView1_RowDeleting" DataKeyNames="id" OnRowCommand="GridView1_RowCommand" Width="800px">
             <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
             <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />

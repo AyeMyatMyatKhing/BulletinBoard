@@ -10,15 +10,31 @@ namespace BulletinBoard_Framework_
 {
     public partial class Login : System.Web.UI.Page
     {
+        #region=====data declaration=====
+        /// <summary>
+        /// user entity
+        /// </summary>
         Entities.User.UserEntities user = new Entities.User.UserEntities();
+        /// <summary>
+        /// user service
+        /// </summary>
         Services.User.UserServices userservice = new Services.User.UserServices();
+        /// <summary>
+        /// data table
+        /// </summary>
         DataTable dt = new DataTable();
+        #endregion
 
+        #region=====design generated code=====
         protected void Page_Load(object sender, EventArgs e)
         {
-             
-        }
 
+        }
+        /// <summary>
+        /// login into common screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnlogin_Click(object sender, EventArgs e)
         {
             user.Email = Convert.ToString(txtemail.Text);
@@ -28,7 +44,7 @@ namespace BulletinBoard_Framework_
             {
                 user.Id = Convert.ToInt32(dt.Rows[0][0].ToString());
                 user.Name = dt.Rows[0][1].ToString();
-                Response.Redirect("~/Views/Main/CommonHeader.aspx?id=" + user.Id);
+                Server.Transfer("~/Views/Main/CommonHeader.aspx?id=" + user.Id);
             }
             else
             {
@@ -36,10 +52,15 @@ namespace BulletinBoard_Framework_
                 Label3.ForeColor = System.Drawing.Color.Red;
             }
         }
-
+        /// <summary>
+        /// cancel login
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btncancel_Click(object sender, EventArgs e)
         {
             Response.Redirect("Login.aspx");
         }
+        #endregion
     }
 }

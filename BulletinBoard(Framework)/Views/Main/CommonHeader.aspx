@@ -25,7 +25,7 @@
                        <asp:LinkButton ID="UserName" runat="server" class="link"></asp:LinkButton>
                     </li>
                     <li>
-                      <asp:LinkButton ID="LinkButton3" runat="server" class="link">Logout</asp:LinkButton>
+                      <asp:LinkButton ID="LinkButton3" runat="server" class="link" OnClick="LinkButton3_Click">Logout</asp:LinkButton>
                    </li>
                </ul>
             </div>

@@ -10,6 +10,7 @@ namespace DAO.Users
 {
     public class UserDao
     {
+        #region=====Insert,Update,Delete=====
         /// <summary>
         /// Insert user data
         /// </summary>
@@ -59,7 +60,7 @@ namespace DAO.Users
             {
                 return CommonDao.GetData("select id,name,email,phone,address from users where is_delete=0", CommandType.Text);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -79,7 +80,7 @@ namespace DAO.Users
                 arr[1] = user.Id;
                 return CommonDao.Delete("Update users set is_delete=@1 where id=@2", arr);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -121,11 +122,11 @@ namespace DAO.Users
                 var arr = new Object[3];
                 arr[0] = user.Email;
                 arr[1] = user.Password;
-                var dt = CommonDao.GetEditData(arr , "select * from users where email=@1 and password=@2", CommandType.Text);
+                var dt = CommonDao.GetEditData(arr, "select * from users where email=@1 and password=@2", CommandType.Text);
                 return dt;
-                
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -150,20 +151,6 @@ namespace DAO.Users
                 throw ex;
             }
         }
-
-        public static DataTable GetUserName(UserEntities user)
-        {
-            try
-            {
-                var arr = new object[2];
-                arr[0] = user.Id;
-                var dt = CommonDao.GetEditData(arr, "select name from users where id=@1", CommandType.Text);
-                return dt;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
+        #endregion
     }
 }

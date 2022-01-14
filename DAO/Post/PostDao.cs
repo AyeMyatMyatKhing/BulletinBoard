@@ -81,7 +81,6 @@ namespace DAO.Post
         {
             try
             {
-                //return CommonDao.GetData("select id,title,description,create_user_id,created_at from posts where status=0 and create_user_id=@1", CommandType.Text);
                 return CommonDao.GetData("select posts.id,posts.title,posts.description,[users].name,convert(varchar,  posts.created_at, 111)as PostedDate from posts inner join [users] on posts.create_user_id = [users].id where posts.status=0", CommandType.Text);
             }
             catch (Exception ex)

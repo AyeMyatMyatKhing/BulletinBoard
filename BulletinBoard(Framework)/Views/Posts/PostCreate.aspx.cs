@@ -55,7 +55,11 @@ namespace BulletinBoard_Framework_.Views.Posts
         {
             userEntity.Id = int.Parse(Request.QueryString["id"].ToString());
         }
-
+        /// <summary>
+        /// create post
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnCreate_Click(object sender, EventArgs e)
         {
             InsertData();
@@ -64,14 +68,18 @@ namespace BulletinBoard_Framework_.Views.Posts
         {
             Response.Write("<script>alert('Data inserted!')</script>");
 
-                Response.Redirect("~/Views/Main/CommonHeader.aspx");
+                Server.Transfer("~/Views/Main/CommonHeader.aspx?id=" +userEntity.Id);
             }
         }
 
-
+        /// <summary>
+        /// cancel create post
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/Main/CommonHeader.aspx");
+            Server.Transfer("~/Views/Main/CommonHeader.aspx");
         }
         #endregion
     }
