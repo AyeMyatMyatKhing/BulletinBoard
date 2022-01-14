@@ -48,7 +48,6 @@ namespace BulletinBoard_Framework_.Views.Posts
         #region=====Design generated code=====
         protected void Page_Load(object sender, EventArgs e)
         {
-            userEntity.Id = int.Parse(Request.QueryString["id"].ToString());
             if (!IsPostBack)
             {
                 BindTextBoxvalues();
@@ -69,7 +68,7 @@ namespace BulletinBoard_Framework_.Views.Posts
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "ShowSuccess", "javascript:alert('Data updated successfully');", true);
             }
-            Server.Transfer("~/Views/Main/CommonHeader.aspx");
+            Response.Redirect("~/Views/Main/CommonHeader.aspx");
         }
         /// <summary>
         /// cancel update

@@ -42,9 +42,9 @@ namespace BulletinBoard_Framework_
             dt = Services.User.UserServices.GetPostList(user);
             if (dt.Rows.Count > 0)
             {
-                user.Id = Convert.ToInt32(dt.Rows[0][0].ToString());
+                Session["user.Id"] = Convert.ToInt32(dt.Rows[0][0].ToString());
                 user.Name = dt.Rows[0][1].ToString();
-                Server.Transfer("~/Views/Main/CommonHeader.aspx?id=" + user.Id);
+                Server.Transfer("~/Views/Main/CommonHeader.aspx?id="+ Session["user.Id"]);
             }
             else
             {

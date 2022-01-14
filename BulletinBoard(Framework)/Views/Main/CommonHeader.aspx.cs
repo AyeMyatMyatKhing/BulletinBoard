@@ -28,6 +28,7 @@ namespace BulletinBoard_Framework_.Views.Main
         /// </summary>
         DataTable dt = new DataTable();
         #endregion
+
         #region======Fill data=====
         public void GetData()
         {
@@ -39,14 +40,13 @@ namespace BulletinBoard_Framework_.Views.Main
                 GridView1.Visible = true;
             }
         }
-        #endregion
 
         public void GetUserName()
         {
-            userEntity.Id = int.Parse(Request.QueryString["id"].ToString());
             dt = Services.User.UserServices.GetUserData(userEntity);
             UserName.Text = dt.Rows[0][0].ToString();
         }
+        #endregion
 
         #region=====Design generated code=====
         protected void Page_Load(object sender, EventArgs e)
@@ -112,8 +112,8 @@ namespace BulletinBoard_Framework_.Views.Main
         /// <param name="e"></param>
         protected void Button1_Click(object sender, EventArgs e)
         {
-            userEntity.Id = int.Parse(Request.QueryString["id"].ToString());
-            Server.Transfer("~/Views/Posts/PostCreate.aspx");
+            userEntity.Id = int.Parse(Session["user.Id"].ToString());
+            Response.Redirect("~/Views/Posts/PostCreate.aspx?id="+ userEntity.Id);
         }
         /// <summary>
         /// user list
