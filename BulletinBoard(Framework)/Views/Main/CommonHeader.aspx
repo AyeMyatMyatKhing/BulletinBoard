@@ -16,7 +16,7 @@
                     <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click" class="link">Users</asp:LinkButton>
                 </li>
                 <li>
-                    <asp:LinkButton ID="LinkButton2" runat="server" class="link">Posts</asp:LinkButton>
+                    <asp:LinkButton ID="LinkButton2" runat="server" class="link" style="text-decoration:underline">Posts</asp:LinkButton>
                 </li>
             </ul>
             <div class="RightNavbar" style="margin-left:56%">

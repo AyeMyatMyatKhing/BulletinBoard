@@ -28,7 +28,7 @@ ul li .link {
     text-decoration:none;
 }
 
-ul li .link:active{
+ul li .active{
     text-decoration:underline;
 }
 
