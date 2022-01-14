@@ -43,6 +43,7 @@ namespace BulletinBoard_Framework_.Views.Main
 
         public void GetUserName()
         {
+            userEntity.Id = int.Parse(Session["user.Id"].ToString());
             dt = Services.User.UserServices.GetUserData(userEntity);
             UserName.Text = dt.Rows[0][0].ToString();
         }
@@ -55,6 +56,7 @@ namespace BulletinBoard_Framework_.Views.Main
             {
                 GetData();
             }
+            GetUserName();
         }
         /// <summary>
         /// Edit command
