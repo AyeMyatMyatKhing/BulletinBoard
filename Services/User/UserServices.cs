@@ -10,7 +10,12 @@ namespace Services.User
 {
     public class UserServices
     {
-
+        #region=====Insert,Update,Delete=====
+        /// <summary>
+        /// insert data into database
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         public static int Insert(UserEntities user)
         {
             try
@@ -19,36 +24,47 @@ namespace Services.User
                 return DAO.Users.UserDao.Insert(user);
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
         }
-
+        /// <summary>
+        /// get data from database
+        /// </summary>
+        /// <returns></returns>
         public static DataTable GetData()
         {
             try
             {
                 return DAO.Users.UserDao.GetData();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
         }
-
+        /// <summary>
+        /// delete selected data
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         public static bool Delete(UserEntities user)
         {
             try
             {
                 return DAO.Users.UserDao.Delete(user);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
         }
-
+        /// <summary>
+        /// update selected data
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         public static bool Update(UserEntities user)
         {
             try
@@ -60,7 +76,11 @@ namespace Services.User
                 throw ex;
             }
         }
-
+        /// <summary>
+        /// get post list for edit and delete
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         public static DataTable GetPostList(UserEntities user)
         {
             try
@@ -72,9 +92,13 @@ namespace Services.User
                 throw ex;
             }
         }
-
+        /// <summary>
+        /// get user data
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         public static DataTable GetUserData(UserEntities user)
-        { 
+        {
             try
             {
                 return DAO.Users.UserDao.GetUserData(user);
@@ -84,5 +108,6 @@ namespace Services.User
                 throw ex;
             }
         }
+        #endregion
     }
 }

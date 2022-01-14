@@ -11,40 +11,6 @@ namespace DAO.Post
     public class PostDao
     {
         #region=====Insert,Update,Delete=====
-        /// <summary>
-        /// Insert post data
-        /// </summary>
-        /// <param name="post"></param>
-        /// <returns></returns>
-        //public static int Insert(PostEntities post)
-        //{
-        //    try
-        //    {
-        //        var arr = new object[10];
-        //        arr[0] = post.Title;
-        //        arr[1] = post.Description;
-        //        arr[2] = post.Status;
-        //        arr[3] = post.Createuserid;
-        //        arr[4] = post.Updateduserid;
-        //        arr[5] = post.Deleteduserid;
-        //        arr[6] = post.Createdat;
-        //        arr[7] = post.Updatedat;
-        //        arr[8] = post.Deletedat;
-
-        //        int id = (int)CommonDao.Insert(arr, "title,description,status,create_user_id,updated_user_id,deleted_user_id,created_at,updated_at,deleted_at", "posts");
-        //        if (id != 0)
-        //        {
-        //            return id;
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //    return Convert.ToInt32(false);
-
-        //}
-
         public static int InsertData(PostEntities post)
         {
             try

@@ -8,6 +8,10 @@ namespace Entities.User
 {
     public class UserEntities
     {
+        #region=====local variable and constant declaration=====
+        /// <summary>
+        /// user variables
+        /// </summary>
         private int _id;
         private string _name;
         private string _email;
@@ -26,8 +30,12 @@ namespace Entities.User
         private int _isdelete;
         private string @email;
         private string @password;
+        #endregion
 
-
+        #region=====constructor and destructor=====
+        /// <summary>
+        /// constructor and destructor for user variable
+        /// </summary>
         public void UserData()
         {
             _id = 0;
@@ -70,7 +78,12 @@ namespace Entities.User
             _deletedat = DateTime.Now;
             _isdelete = 0;
         }
+        #endregion
 
+        #region=====properties assigning and retrieving
+        /// <summary>
+        /// get or set the id attribute value
+        /// </summary>
         public int Id
         {
             get
@@ -79,10 +92,12 @@ namespace Entities.User
             }
             set
             {
-                _id = value;           
+                _id = value;
             }
         }
-
+        /// <summary>
+        /// get or set the name attribute value
+        /// </summary>
         public string Name
         {
             get
@@ -94,7 +109,9 @@ namespace Entities.User
                 _name = value;
             }
         }
-
+        /// <summary>
+        /// get or set the email attribute value
+        /// </summary>
         public string Email
         {
             get
@@ -106,7 +123,9 @@ namespace Entities.User
                 _email = value;
             }
         }
-
+        /// <summary>
+        /// get or set the password attribute value
+        /// </summary>
         public string Password
         {
             get
@@ -118,7 +137,9 @@ namespace Entities.User
                 _password = value;
             }
         }
-
+        /// <summary>
+        /// get or set the profile attribute value
+        /// </summary>
         public string Profile
         {
             get
@@ -130,7 +151,9 @@ namespace Entities.User
                 _profile = value;
             }
         }
-
+        /// <summary>
+        /// get or set the type attribute value
+        /// </summary>
         public string Type
         {
             get
@@ -142,7 +165,9 @@ namespace Entities.User
                 _type = value;
             }
         }
-
+        /// <summary>
+        /// get or set the phone attribute value
+        /// </summary>
         public string Phone
         {
             get
@@ -154,8 +179,10 @@ namespace Entities.User
                 _phone = value;
             }
         }
-
-        public string Address 
+        /// <summary>
+        /// get or set the address attribute value
+        /// </summary>
+        public string Address
         {
             get
             {
@@ -166,7 +193,9 @@ namespace Entities.User
                 _address = value;
             }
         }
-
+        /// <summary>
+        /// get or set the dateofbirth attribute value
+        /// </summary>
         public DateTime Dateofbirth
         {
             get
@@ -178,7 +207,9 @@ namespace Entities.User
                 _dateofbirth = value;
             }
         }
-
+        /// <summary>
+        /// get or set the Createuserid attribute value
+        /// </summary>
         public int Createuserid
         {
             get
@@ -190,7 +221,9 @@ namespace Entities.User
                 _createuserid = value;
             }
         }
-
+        /// <summary>
+        /// get or set the Updateduserid attribute value
+        /// </summary>
         public int Updateduserid
         {
             get
@@ -202,7 +235,9 @@ namespace Entities.User
                 _updateduserid = value;
             }
         }
-
+        /// <summary>
+        /// get or set the Deleteduserid attribute value
+        /// </summary>
         public int Deleteduserid
         {
             get
@@ -214,7 +249,9 @@ namespace Entities.User
                 _deleteduserid = value;
             }
         }
-
+        /// <summary>
+        /// get or set the Createdat attribute value
+        /// </summary>
         public DateTime Createdat
         {
             get
@@ -226,7 +263,9 @@ namespace Entities.User
                 _createdat = value;
             }
         }
-
+        /// <summary>
+        /// get or set the Updatedat attribute value
+        /// </summary>
         public DateTime Updatedat
         {
             get
@@ -238,7 +277,9 @@ namespace Entities.User
                 _updatedat = value;
             }
         }
-
+        /// <summary>
+        /// get or set the Deletedat attribute value
+        /// </summary>
         public DateTime Deletedat
         {
             get
@@ -250,7 +291,9 @@ namespace Entities.User
                 _deletedat = value;
             }
         }
-
+        /// <summary>
+        ///  get or set the Isdelete attribute value
+        /// </summary>
         public int Isdelete
         {
             get
@@ -262,6 +305,6 @@ namespace Entities.User
                 _isdelete = value;
             }
         }
-
+        #endregion
     }
 }

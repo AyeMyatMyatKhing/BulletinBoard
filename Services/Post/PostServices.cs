@@ -10,19 +10,12 @@ namespace Services.Post
 {
     public class PostServices
     {
-        //public static int Insert(PostEntities post)
-        //{
-        //    try
-        //    {
-        //        var dt = new DAO.Post.PostDao();
-        //        return DAO.Post.PostDao.Insert(post);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
-
+        #region=====Insert,Update,Delete=====
+        /// <summary>
+        /// insert data into database
+        /// </summary>
+        /// <param name="post"></param>
+        /// <returns></returns>
         public static int InsertData(PostEntities post)
         {
             try
@@ -35,7 +28,10 @@ namespace Services.Post
                 throw ex;
             }
         }
-
+        /// <summary>
+        /// select data from database
+        /// </summary>
+        /// <returns></returns>
         public static DataTable GetAllData()
         {
             try
@@ -47,7 +43,11 @@ namespace Services.Post
                 throw ex;
             }
         }
-
+        /// <summary>
+        /// edit selected data
+        /// </summary>
+        /// <param name="post"></param>
+        /// <returns></returns>
         public static DataTable EditPost(PostEntities post)
         {
 
@@ -60,7 +60,11 @@ namespace Services.Post
                 throw ex;
             }
         }
-
+        /// <summary>
+        /// update selected post
+        /// </summary>
+        /// <param name="post"></param>
+        /// <returns></returns>
         public static bool Update(PostEntities post)
         {
             try
@@ -72,11 +76,15 @@ namespace Services.Post
                 throw ex;
             }
         }
-
+        /// <summary>
+        /// delete selected post
+        /// </summary>
+        /// <param name="post"></param>
+        /// <returns></returns>
         public static bool Delete(PostEntities post)
         {
             try
-            { 
+            {
                 return DAO.Post.PostDao.Delete(post);
             }
             catch (Exception ex)
@@ -84,6 +92,6 @@ namespace Services.Post
                 throw ex;
             }
         }
-
+        #endregion
     }
 }

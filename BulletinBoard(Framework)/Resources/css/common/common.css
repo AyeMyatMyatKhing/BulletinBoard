@@ -28,9 +28,6 @@ ul li .link {
     text-decoration:none;
 }
 
-ul li .active{
-    text-decoration:underline;
-}
 
 h2 {
     color: #3333FF;
