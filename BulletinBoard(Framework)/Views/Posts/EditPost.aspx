@@ -36,6 +36,7 @@
                     </td>
                     <td class="auto-style2">
                         <asp:TextBox ID="txtTitle" runat="server" class="textbox"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="requiredTitle" runat="server" ControlToValidate="txtTitle" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -44,14 +45,15 @@
                     </td>
                     <td class="auto-style3">
                         <asp:TextBox ID="txtDescription" runat="server" TextMode="MultiLine" class="textbox"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="Requireddescription" runat="server" ControlToValidate="txtDescription" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style4"></td>
                     <td class="auto-style4">
-                        <asp:Button ID="btnUpdate" runat="server" Text="Update" Height="33px" OnClick="btnUpdate_Click" BackColor="#3333FF" BorderColor="#3333FF" class="button"/>
+                        <asp:Button ID="btnUpdate" runat="server" Text="Update" OnClick="btnUpdate_Click" class="button"/>
 &nbsp;
-                        <asp:Button ID="btnCancel" runat="server" Text="Cancel" Height="33px" BackColor="#3333FF" BorderColor="#3333FF" OnClick="btnCancel_Click" class="button"/>
+                        <asp:Button ID="btnCancel" runat="server" Text="Cancel" causesvalidation="false" OnClick="btnCancel_Click" class="button"/>
                     </td>
                 </tr>
             </table>

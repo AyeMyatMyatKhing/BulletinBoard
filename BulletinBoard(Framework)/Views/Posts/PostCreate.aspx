@@ -8,7 +8,7 @@
     <link href="../../Resources/css/common/common.css" type="text/css" rel="stylesheet"/>
     <style type="text/css">
         .auto-style1 {
-            width: 50%;
+            width: 53%;
         }
         .auto-style2 {
             height: 50px;
@@ -16,7 +16,7 @@
         .auto-style3 {
             height: 52px;
         }
-    </style>
+        </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -32,7 +32,10 @@
                         <asp:Label ID="Label2" runat="server" Text="Title" ForeColor="#003399"></asp:Label>
                     </td>
                     <td class="auto-style2">
-                        <asp:TextBox ID="txtTitle" runat="server" class="textbox"></asp:TextBox>
+                        <asp:TextBox ID="txtTitle" runat="server" class="textbox"></asp:TextBox> 
+                    </td>
+                    <td>
+                         <asp:RequiredFieldValidator ID="TitleValidator" ErrorMessage="*" ControlToValidate="txtTitle" runat="server" style="color:red" Display="Dynamic"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -42,13 +45,16 @@
                     <td class="auto-style2">
                         <asp:TextBox ID="txtDescription" runat="server" TextMode="MultiLine" class="textbox"></asp:TextBox>
                     </td>
+                    <td>
+                         <asp:RequiredFieldValidator ID="DescriptionValidator" ErrorMessage="*" Display="Dynamic" ControlToValidate="txtDescription" runat="server" style="color:red"></asp:RequiredFieldValidator>
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style3"></td>
                     <td class="auto-style3">
                         <asp:Button ID="btnCreate" runat="server" Text="Create" OnClick="btnCreate_Click" class="button"/>
 &nbsp;
-                        <asp:Button ID="btnCancel" runat="server" Text="Cancel" class="button" OnClick="btnCancel_Click"/>
+                        <asp:Button ID="btnCancel" runat="server" Text="Cancel" class="button" OnClick="btnCancel_Click" CausesValidation="false"/>
                     </td>
                 </tr>
             </table>

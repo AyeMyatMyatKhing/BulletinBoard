@@ -42,6 +42,15 @@ namespace BulletinBoard_Framework_.Views.Users
         protected global::System.Web.UI.WebControls.TextBox txtName;
 
         /// <summary>
+        /// RequiredName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredName;
+
+        /// <summary>
         /// Label3 control.
         /// </summary>
         /// <remarks>
@@ -58,6 +67,15 @@ namespace BulletinBoard_Framework_.Views.Users
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
+
+        /// <summary>
+        /// RequiredFieldValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
 
         /// <summary>
         /// Label4 control.
@@ -78,6 +96,15 @@ namespace BulletinBoard_Framework_.Views.Users
         protected global::System.Web.UI.WebControls.TextBox txtPassword;
 
         /// <summary>
+        /// RequiredFieldValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+
+        /// <summary>
         /// Label10 control.
         /// </summary>
         /// <remarks>
@@ -94,6 +121,24 @@ namespace BulletinBoard_Framework_.Views.Users
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtRePassword;
+
+        /// <summary>
+        /// RequiredConfirmPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredConfirmPassword;
+
+        /// <summary>
+        /// ComparePassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator ComparePassword;
 
         /// <summary>
         /// Label5 control.
@@ -114,6 +159,15 @@ namespace BulletinBoard_Framework_.Views.Users
         protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
 
         /// <summary>
+        /// RequiredType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredType;
+
+        /// <summary>
         /// Label6 control.
         /// </summary>
         /// <remarks>
@@ -130,6 +184,15 @@ namespace BulletinBoard_Framework_.Views.Users
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPhone;
+
+        /// <summary>
+        /// RequiredPhone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredPhone;
 
         /// <summary>
         /// Label7 control.
@@ -150,6 +213,15 @@ namespace BulletinBoard_Framework_.Views.Users
         protected global::System.Web.UI.WebControls.TextBox txtAddress;
 
         /// <summary>
+        /// RequiredAddress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredAddress;
+
+        /// <summary>
         /// Label8 control.
         /// </summary>
         /// <remarks>
@@ -166,6 +238,24 @@ namespace BulletinBoard_Framework_.Views.Users
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDob;
+
+        /// <summary>
+        /// RequiredDob control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredDob;
+
+        /// <summary>
+        /// ValidateDob control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator ValidateDob;
 
         /// <summary>
         /// Label9 control.
@@ -186,6 +276,15 @@ namespace BulletinBoard_Framework_.Views.Users
         protected global::System.Web.UI.WebControls.FileUpload uploadProfile;
 
         /// <summary>
+        /// RequiredProfile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredProfile;
+
+        /// <summary>
         /// btnConfirm control.
         /// </summary>
         /// <remarks>
@@ -202,5 +301,14 @@ namespace BulletinBoard_Framework_.Views.Users
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCancel;
+
+        /// <summary>
+        /// login control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton login;
     }
 }

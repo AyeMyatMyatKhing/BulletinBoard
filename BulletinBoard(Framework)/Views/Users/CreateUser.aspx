@@ -19,6 +19,9 @@
         .auto-style4 {
             height: 56px;
         }
+        .auto-style5 {
+            width: 121px;
+        }
     </style>
 </head>
 <body>
@@ -34,6 +37,7 @@
                     </td>
                     <td class="auto-style2">
                         <asp:TextBox ID="txtName" runat="server" class="textbox"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredName" ErrorMessage="*" Display="Dynamic" runat="server" ControlToValidate="txtName" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -42,6 +46,7 @@
                     </td>
                     <td class="auto-style3">
                         <asp:TextBox ID="txtEmail" runat="server" TextMode="Email" class="textbox"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ErrorMessage="*" Display="Dynamic" runat="server" ControlToValidate="txtEmail" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -50,6 +55,7 @@
                     </td>
                     <td class="auto-style3">
                         <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" class="textbox"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ErrorMessage="*" runat="server" Display="Dynamic" ControlToValidate="txtPassword" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -58,6 +64,8 @@
                     </td>
                     <td class="auto-style3">
                         <asp:TextBox ID="txtRePassword" runat="server" TextMode="Password" class="textbox"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredConfirmPassword" ErrorMessage="*" runat="server" ControlToValidate="txtRePassword" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                         <asp:CompareValidator ID="ComparePassword" runat="server" ControlToCompare="txtPassword" ControlToValidate="txtRePassword" Display="Dynamic" ErrorMessage="Password do not match." ForeColor="Red"></asp:CompareValidator>
                     </td>
                 </tr>
                 <tr>
@@ -66,9 +74,11 @@
                     </td>
                     <td class="auto-style2">
                         <asp:DropDownList ID="DropDownList1" runat="server" Height="22px">
+                            <asp:ListItem Selected="True">Choose type</asp:ListItem>
                             <asp:ListItem>Admin</asp:ListItem>
                             <asp:ListItem>User</asp:ListItem>
                         </asp:DropDownList>
+                        <asp:RequiredFieldValidator ID="RequiredType" InitialValue="Choose type" ErrorMessage="*" Display="Dynamic" runat="server" ControlToValidate="DropDownList1" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -76,7 +86,9 @@
                         <asp:Label ID="Label6" runat="server" Text="Phone" ></asp:Label>
                     </td>
                     <td class="auto-style2">
-                        <asp:TextBox ID="txtPhone" runat="server" class="textbox"></asp:TextBox>
+                        <asp:TextBox ID="txtPhone" runat="server" class="textbox" TextMode="Phone"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredPhone" ErrorMessage="*" Display="Dynamic" runat="server" ControlToValidate="txtPhone" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <%--<asp:RegularExpressionValidator ID="ValidatePhone" ControlToValidate="txtPhone" Display="Dynamic" runat="server" ValidationExpression="^([0-9]{10})$" Text="Invalid phone number" ForeColor="Red"></asp:RegularExpressionValidator>--%>
                     </td>
                 </tr>
                 <tr>
@@ -85,6 +97,7 @@
                     </td>
                     <td class="auto-style3">
                         <asp:TextBox ID="txtAddress" runat="server" class="textbox"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredAddress" ErrorMessage="*" Display="Dynamic" runat="server" ControlToValidate="txtAddress" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -93,6 +106,8 @@
                     </td>
                     <td class="auto-style2">
                         <asp:TextBox ID="txtDob" runat="server" TextMode="Date" class="textbox"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredDob" ErrorMessage="*" Display="Dynamic" runat="server" ControlToValidate="txtDob" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <asp:RangeValidator ID="ValidateDob" runat="server" ControlToValidate="txtDob" Display="Dynamic" MinimumValue="12/31/1950" MaximumValue="12/31/2020" Type="Date" Text="Invalid date" ForeColor="Red"></asp:RangeValidator>
                     </td>
                 </tr>
                 <tr>
@@ -101,13 +116,19 @@
                     </td>
                     <td class="auto-style3">
                         <asp:FileUpload ID="uploadProfile" runat="server" class="textbox" />
+                        <asp:RequiredFieldValidator ID="RequiredProfile" ErrorMessage="*" Display="Dynamic" runat="server" ControlToValidate="uploadProfile" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                  <tr>
                     <td class="auto-style4" colspan="2">
                         <asp:Button ID="btnConfirm" runat="server" OnClick="btnConfirm_Click" Text="Confirm" class="button" />
 &nbsp;&nbsp;
-                        <asp:Button ID="btnCancel" runat="server" Text="Cancel" class="button" />
+                        <asp:Button ID="btnCancel" runat="server" Text="Cancel" class="button" causesvalidation="false"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                         <h4>If already have an account, please <asp:LinkButton ID="login" runat="server" causesvalidation="false" OnClick="login_Click1">Login</asp:LinkButton>.</h4>
                     </td>
                 </tr>
             </table>

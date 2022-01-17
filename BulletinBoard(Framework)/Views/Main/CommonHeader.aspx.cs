@@ -133,7 +133,7 @@ namespace BulletinBoard_Framework_.Views.Main
         /// <param name="e"></param>
         protected void LinkButton3_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Login.aspx");
+            Response.Redirect("~/Views/Users/CreateUser.aspx");
         }
         #endregion
     }

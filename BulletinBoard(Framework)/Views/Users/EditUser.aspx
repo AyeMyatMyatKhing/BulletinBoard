@@ -56,7 +56,8 @@
                         <asp:Label ID="Label2" runat="server" Text="Email"></asp:Label>
                     </td>
                     <td class="auto-style6">
-                        <asp:TextBox ID="txtemail" runat="server" class="textbox"></asp:TextBox>
+                        <asp:TextBox ID="txtemail" runat="server" class="textbox" TextMode="Email"></asp:TextBox>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" Display="Dynamic" Text="Please provide a valid email address" ValidationExpression="^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$" ControlToValidate="txtemail" ForeColor="Red"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
                 <tr>
@@ -64,7 +65,8 @@
                         <asp:Label ID="Label4" runat="server" Text="Phone" ></asp:Label>
                     </td>
                     <td class="auto-style4">
-                        <asp:TextBox ID="txtphone" runat="server" class="textbox"></asp:TextBox>
+                        <asp:TextBox ID="txtphone" runat="server" class="textbox" TextMode="Phone"></asp:TextBox>
+                        <%--<asp:RegularExpressionValidator ID="ValidatePhone" runat="server" Display="Dynamic" Text="RegularExpressionError" ControlToValidate="txtPhone" ValidationExpression="[0-9]{10}" ForeColor="red"></asp:RegularExpressionValidator>--%>
                     </td>
                 </tr>
                 <tr>

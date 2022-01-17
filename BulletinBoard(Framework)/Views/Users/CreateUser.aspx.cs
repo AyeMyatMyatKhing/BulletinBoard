@@ -69,8 +69,13 @@ namespace BulletinBoard_Framework_.Views.Users
             if (id > 0)
             {
                 Response.Write("<script>alert('Data inserted!')</script>");
-                Response.Redirect("UserList.aspx");
             }
+        }
+
+
+        protected void login_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Login.aspx");
         }
         #endregion
     }
