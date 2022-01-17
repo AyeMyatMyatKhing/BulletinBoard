@@ -33,6 +33,15 @@ namespace BulletinBoard_Framework_.Views.Users
         protected global::System.Web.UI.WebControls.TextBox txtname;
 
         /// <summary>
+        /// validate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator validate;
+
+        /// <summary>
         /// Label2 control.
         /// </summary>
         /// <remarks>
@@ -58,6 +67,15 @@ namespace BulletinBoard_Framework_.Views.Users
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+
+        /// <summary>
+        /// RegularExpressionValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
 
         /// <summary>
         /// Label4 control.
@@ -94,6 +112,15 @@ namespace BulletinBoard_Framework_.Views.Users
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtaddr;
+
+        /// <summary>
+        /// RegularExpressionValidator3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator3;
 
         /// <summary>
         /// btnconfirm control.

@@ -49,6 +49,7 @@
                     </td>
                     <td class="auto-style4">
                         <asp:TextBox ID="txtname" runat="server" class="textbox"></asp:TextBox>
+                        <asp:RegularExpressionValidator runat="server" ID="validate" ControlToValidate="txtname" ValidationExpression="[\s\S]{0,50}" ErrorMessage="Only 50 characters are allowed" ForeColor="red" Display="Dynamic"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
                 <tr>
@@ -58,6 +59,7 @@
                     <td class="auto-style6">
                         <asp:TextBox ID="txtemail" runat="server" class="textbox" TextMode="Email"></asp:TextBox>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" Display="Dynamic" Text="Please provide a valid email address" ValidationExpression="^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$" ControlToValidate="txtemail" ForeColor="Red"></asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator runat="server" ID="RegularExpressionValidator2" ControlToValidate="txtemail" ValidationExpression="[\s\S]{0,50}" ErrorMessage="Only 50 characters are allowed" ForeColor="red" Display="Dynamic"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
                 <tr>
@@ -75,6 +77,7 @@
                     </td>
                     <td class="auto-style4">
                         <asp:TextBox ID="txtaddr" runat="server" class="textbox" TextMode="MultiLine"></asp:TextBox>
+                        <asp:RegularExpressionValidator runat="server" ID="RegularExpressionValidator3" ControlToValidate="txtaddr" ValidationExpression="[\s\S]{0,50}" ErrorMessage="Only 50 characters are allowed" ForeColor="red" Display="Dynamic"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
                 <tr>

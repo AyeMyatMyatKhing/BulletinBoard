@@ -37,6 +37,7 @@
                     <td class="auto-style2">
                         <asp:TextBox ID="txtTitle" runat="server" class="textbox"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="requiredTitle" runat="server" ControlToValidate="txtTitle" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="DescriptionValidator" ErrorMessage="*" Display="Dynamic" ControlToValidate="txtTitle" runat="server" style="color:red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -46,6 +47,7 @@
                     <td class="auto-style3">
                         <asp:TextBox ID="txtDescription" runat="server" TextMode="MultiLine" class="textbox"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="Requireddescription" runat="server" ControlToValidate="txtDescription" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ErrorMessage="*" Display="Dynamic" ControlToValidate="txtDescription" runat="server" style="color:red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>

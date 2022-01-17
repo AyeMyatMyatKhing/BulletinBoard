@@ -33,9 +33,8 @@
                     </td>
                     <td class="auto-style2">
                         <asp:TextBox ID="txtTitle" runat="server" class="textbox"></asp:TextBox> 
-                    </td>
-                    <td>
-                         <asp:RequiredFieldValidator ID="TitleValidator" ErrorMessage="*" ControlToValidate="txtTitle" runat="server" style="color:red" Display="Dynamic"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator runat="server" ID="validate" ControlToValidate="txtTitle" ValidationExpression="[\s\S]{0,50}" ErrorMessage="Only 50 characters are allowed" ForeColor="red" Display="Dynamic"></asp:RegularExpressionValidator>
+                        <asp:RequiredFieldValidator ID="TitleValidator" ErrorMessage="*" ControlToValidate="txtTitle" runat="server" style="color:red" Display="Dynamic"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -44,9 +43,8 @@
                     </td>
                     <td class="auto-style2">
                         <asp:TextBox ID="txtDescription" runat="server" TextMode="MultiLine" class="textbox"></asp:TextBox>
-                    </td>
-                    <td>
-                         <asp:RequiredFieldValidator ID="DescriptionValidator" ErrorMessage="*" Display="Dynamic" ControlToValidate="txtDescription" runat="server" style="color:red"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator runat="server" ID="RegularExpressionValidator1" ControlToValidate="txtDescription" ValidationExpression="[\s\S]{0,50}" ErrorMessage="Only 50 characters are allowed" ForeColor="red" Display="Dynamic"></asp:RegularExpressionValidator>
+                        <asp:RequiredFieldValidator ID="DescriptionValidator" ErrorMessage="*" Display="Dynamic" ControlToValidate="txtDescription" runat="server" style="color:red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>

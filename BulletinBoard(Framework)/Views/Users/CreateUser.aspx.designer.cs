@@ -51,6 +51,15 @@ namespace BulletinBoard_Framework_.Views.Users
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredName;
 
         /// <summary>
+        /// validate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator validate;
+
+        /// <summary>
         /// Label3 control.
         /// </summary>
         /// <remarks>
@@ -78,6 +87,15 @@ namespace BulletinBoard_Framework_.Views.Users
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
 
         /// <summary>
+        /// RegularExpressionValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+
+        /// <summary>
         /// Label4 control.
         /// </summary>
         /// <remarks>
@@ -103,6 +121,15 @@ namespace BulletinBoard_Framework_.Views.Users
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+
+        /// <summary>
+        /// RegularExpressionValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
 
         /// <summary>
         /// Label10 control.
@@ -220,6 +247,15 @@ namespace BulletinBoard_Framework_.Views.Users
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredAddress;
+
+        /// <summary>
+        /// RegularExpressionValidator3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator3;
 
         /// <summary>
         /// Label8 control.
