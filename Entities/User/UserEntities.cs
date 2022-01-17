@@ -28,8 +28,6 @@ namespace Entities.User
         private DateTime _updatedat;
         private DateTime _deletedat;
         private int _isdelete;
-        private string @email;
-        private string @password;
         #endregion
 
         #region=====constructor and destructor=====
@@ -54,8 +52,6 @@ namespace Entities.User
             _updatedat = DateTime.Now;
             _deletedat = DateTime.Now;
             _isdelete = 0;
-            @email = String.Empty;
-            password = String.Empty;
 
         }
 

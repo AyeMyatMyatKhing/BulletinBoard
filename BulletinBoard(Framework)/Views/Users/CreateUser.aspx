@@ -29,7 +29,7 @@
         <div class="post">
             <table  class="auto-style1">
                 <tr>
-                    <td colspan="2"><h2>Create User</h2></td>
+                    <td colspan="2"><h2>Registration form</h2></td>
                 </tr>
                 <tr>
                     <td class="auto-style2">
@@ -91,7 +91,7 @@
                     <td class="auto-style2">
                         <asp:TextBox ID="txtPhone" runat="server" class="textbox" TextMode="Phone"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredPhone" ErrorMessage="*" Display="Dynamic" runat="server" ControlToValidate="txtPhone" ForeColor="Red"></asp:RequiredFieldValidator>
-                        <%--<asp:RegularExpressionValidator ID="ValidatePhone" ControlToValidate="txtPhone" Display="Dynamic" runat="server" ValidationExpression="^([0-9]{10})$" Text="Invalid phone number" ForeColor="Red"></asp:RegularExpressionValidator>--%>
+                       <%--<asp:RegularExpressionValidator ID="ValidatePhone" ControlToValidate="txtPhone" Display="Dynamic" runat="server" ValidationExpression="^([0-9]{10})$" Text="Invalid phone number" ForeColor="Red"></asp:RegularExpressionValidator>--%>
                     </td>
                 </tr>
                 <tr>

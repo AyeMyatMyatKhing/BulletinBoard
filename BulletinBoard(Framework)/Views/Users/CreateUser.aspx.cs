@@ -31,24 +31,30 @@ namespace BulletinBoard_Framework_.Views.Users
         /// </summary>
         private void InsertUser()
         {
-            int len = uploadProfile.PostedFile.ContentLength;
-            byte[] pic = new byte[len + 1];
-            uploadProfile.PostedFile.InputStream.Read(pic, 0, len);
-            user.Name = txtName.Text.ToString();
-            user.Email = txtEmail.Text.ToString();
-            user.Password = txtPassword.Text.ToString();
-            user.Profile = pic.ToString();
-            user.Type = DropDownList1.SelectedItem.Value.ToString();
-            user.Phone = txtPhone.Text.ToString();
-            user.Address = txtAddress.Text.ToString();
-            user.Dateofbirth = Convert.ToDateTime(txtDob.Text.ToString());
-            user.Createuserid = 1;
-            user.Updateduserid = 1;
-            user.Deleteduserid = 1;
-            user.Createdat = DateTime.Now;
-            user.Updatedat = DateTime.Now;
-            user.Deletedat = DateTime.Now;
-            user.Isdelete = 0;
+            if (uploadProfile.HasFile)
+            {
+                string str = uploadProfile.FileName;
+                uploadProfile.PostedFile.SaveAs(Server.MapPath("~/profile/" + str));
+                string Image = "~/profile/" + str.ToString();
+                user.Name = txtName.Text.ToString();
+                user.Email = txtEmail.Text.ToString();
+                user.Password = txtPassword.Text.ToString();
+                user.Profile = Image;
+                user.Type = DropDownList1.SelectedItem.Value.ToString();
+                user.Phone = txtPhone.Text.ToString();
+                user.Address = txtAddress.Text.ToString();
+                user.Dateofbirth = Convert.ToDateTime(txtDob.Text.ToString());
+                user.Createuserid = 1;
+                user.Updateduserid = 1;
+                user.Deleteduserid = 1;
+                user.Createdat = DateTime.Now;
+                user.Updatedat = DateTime.Now;
+                user.Deletedat = DateTime.Now;
+                user.Isdelete = 0;
+            }
+            //int len = uploadProfile.PostedFile.ContentLength;
+            //byte[] pic = new byte[len + 1];
+            //uploadProfile.PostedFile.InputStream.Read(pic, 0, len);
         }
         #endregion
 
@@ -72,7 +78,11 @@ namespace BulletinBoard_Framework_.Views.Users
             }
         }
 
-
+        /// <summary>
+        /// login
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void login_Click1(object sender, EventArgs e)
         {
             Response.Redirect("~/Login.aspx");
