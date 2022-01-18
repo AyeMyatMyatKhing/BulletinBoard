@@ -18,7 +18,7 @@ namespace Entities.User
         private string _password;
         private string _profile;
         private string _type;
-        private string _phone;
+        private int _phone;
         private string _address;
         private DateTime _dateofbirth;
         private int _createuserid;
@@ -42,7 +42,7 @@ namespace Entities.User
             _password = String.Empty;
             _profile = String.Empty;
             _type = String.Empty;
-            _phone = String.Empty;
+            _phone = 0;
             _address = String.Empty;
             _dateofbirth = DateTime.Now;
             _createuserid = 1;
@@ -55,7 +55,7 @@ namespace Entities.User
 
         }
 
-        public void UserData(int id, string name, string email, string password, string profile, string type, string phone, string address, DateTime dateofbirth, int createduserid, int updateduserid, int deleteduserid, DateTime createdat, DateTime updatedat, DateTime deletedat, int is_delete)
+        public void UserData(int id, string name, string email, string password, string profile, string type, int phone, string address, DateTime dateofbirth, int createduserid, int updateduserid, int deleteduserid, DateTime createdat, DateTime updatedat, DateTime deletedat, int is_delete)
         {
             _id = id;
             _name = name;
@@ -164,7 +164,7 @@ namespace Entities.User
         /// <summary>
         /// get or set the phone attribute value
         /// </summary>
-        public string Phone
+        public int Phone
         {
             get
             {

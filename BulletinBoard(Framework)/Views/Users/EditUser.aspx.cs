@@ -61,7 +61,7 @@ namespace BulletinBoard_Framework_.Views.Users
         {
             user.Name = txtname.Text;
             user.Email = txtemail.Text;
-            user.Phone = txtphone.Text;
+            user.Phone = int.Parse(txtphone.Text);
             user.Address = txtaddr.Text;
             user.Id = int.Parse(Request.QueryString["id"].ToString());
             bool update = Services.User.UserServices.Update(user);

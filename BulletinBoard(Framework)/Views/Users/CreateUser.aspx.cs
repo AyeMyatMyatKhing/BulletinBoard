@@ -41,7 +41,7 @@ namespace BulletinBoard_Framework_.Views.Users
                 user.Password = txtPassword.Text.ToString();
                 user.Profile = Image;
                 user.Type = DropDownList1.SelectedItem.Value.ToString();
-                user.Phone = txtPhone.Text.ToString();
+                user.Phone = int.Parse(txtPhone.Text.ToString());
                 user.Address = txtAddress.Text.ToString();
                 user.Dateofbirth = Convert.ToDateTime(txtDob.Text.ToString());
                 user.Createuserid = 1;

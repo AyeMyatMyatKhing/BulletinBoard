@@ -91,7 +91,7 @@
                     <td class="auto-style2">
                         <asp:TextBox ID="txtPhone" runat="server" class="textbox" TextMode="Phone"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredPhone" ErrorMessage="*" Display="Dynamic" runat="server" ControlToValidate="txtPhone" ForeColor="Red"></asp:RequiredFieldValidator>
-                       <%--<asp:RegularExpressionValidator ID="ValidatePhone" ControlToValidate="txtPhone" Display="Dynamic" runat="server" ValidationExpression="^([0-9]{10})$" Text="Invalid phone number" ForeColor="Red"></asp:RegularExpressionValidator>--%>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="txtPhone" ErrorMessage="Invalid number." ForeColor="Red" ValidationExpression="^[0-9]*$" Display="Dynamic"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
                 <tr>
