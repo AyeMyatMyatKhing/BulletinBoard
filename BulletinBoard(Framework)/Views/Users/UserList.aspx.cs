@@ -24,6 +24,7 @@ namespace BulletinBoard_Framework_.Views.Users
         /// </summary>
         DataTable dt = new DataTable();
         #endregion
+
         #region=====Get data=====
         /// <summary>
         /// get user list from database
@@ -104,6 +105,12 @@ namespace BulletinBoard_Framework_.Views.Users
         protected void btnBack_Click(object sender, EventArgs e)
         {
             Server.Transfer("~/Views/Main/CommonHeader.aspx");
+        }
+
+        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GridView1.PageIndex = e.NewPageIndex;
+            this.GetUserData();
         }
     }
 }

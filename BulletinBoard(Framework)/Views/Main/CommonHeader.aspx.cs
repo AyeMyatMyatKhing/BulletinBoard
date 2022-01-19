@@ -136,5 +136,11 @@ namespace BulletinBoard_Framework_.Views.Main
             Response.Redirect("~/Views/Users/CreateUser.aspx");
         }
         #endregion
+
+        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GridView1.PageIndex = e.NewPageIndex;
+            this.GetData();
+        }
     }
 }

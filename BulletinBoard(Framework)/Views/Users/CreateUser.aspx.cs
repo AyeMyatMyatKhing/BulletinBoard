@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using System.IO;
 
 namespace BulletinBoard_Framework_.Views.Users
 {
@@ -33,6 +34,9 @@ namespace BulletinBoard_Framework_.Views.Users
         {
             if (uploadProfile.HasFile)
             {
+                //int length = uploadProfile.PostedFile.ContentLength;
+                //byte[] pic = new byte[length];
+                //uploadProfile.PostedFile.InputStream.Read(pic, 0, length);
                 string str = uploadProfile.FileName;
                 uploadProfile.PostedFile.SaveAs(Server.MapPath("~/profile/" + str));
                 string Image = "~/profile/" + str.ToString();
@@ -41,7 +45,7 @@ namespace BulletinBoard_Framework_.Views.Users
                 user.Password = txtPassword.Text.ToString();
                 user.Profile = Image;
                 user.Type = DropDownList1.SelectedItem.Value.ToString();
-                user.Phone = Convert.ToInt32(txtPhone.Text.ToString());
+                user.Phone = int.Parse(txtPhone.Text.ToString());
                 user.Address = txtAddress.Text.ToString();
                 user.Dateofbirth = Convert.ToDateTime(txtDob.Text.ToString());
                 user.Createuserid = 1;
