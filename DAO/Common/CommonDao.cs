@@ -302,19 +302,48 @@ namespace DAO
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
+        //public static string Encrypt(string str)
+        //{
+        //    string EncrptKey = "r00tpass";
+        //    byte[] byKey = { };
+        //    byte[] IV = { 18, 52, 86, 120, 144, 171, 205, 239 };
+        //    byKey = System.Text.Encoding.UTF8.GetBytes(EncrptKey.Substring(0, 8));
+        //    DESCryptoServiceProvider des = new DESCryptoServiceProvider();
+        //    byte[] inputByteArray = Encoding.UTF8.GetBytes(str);
+        //    MemoryStream ms = new MemoryStream();
+        //    CryptoStream cs = new CryptoStream(ms, des.CreateEncryptor(byKey, IV), CryptoStreamMode.Write);
+        //    cs.Write(inputByteArray, 0, inputByteArray.Length);
+        //    cs.FlushFinalBlock();
+        //    return Convert.ToBase64String(ms.ToArray());
+        //}
+
+        //public static string Encrypt(string str)
+        //{
+        //    string EncryptionKey = "MAKV2SPBNI99212";
+        //    byte[] clearBytes = Encoding.Unicode.GetBytes(str);
+        //    using (Aes encryptor = Aes.Create())
+        //    {
+        //        Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(EncryptionKey, new byte[] { 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76 });
+        //        encryptor.Key = pdb.GetBytes(32);
+        //        encryptor.IV = pdb.GetBytes(18);
+        //        using (MemoryStream ms = new MemoryStream())
+        //        {
+        //            using (CryptoStream cs = new CryptoStream(ms, encryptor.CreateEncryptor(), CryptoStreamMode.Write))
+        //            {
+        //                cs.Write(clearBytes, 0, clearBytes.Length);
+        //                cs.Close();
+        //            }
+        //            str = Convert.ToBase64String(ms.ToArray());
+        //        }
+        //    }
+        //    return str;
+        //}
+
         public static string Encrypt(string str)
         {
-            string EncrptKey = "r00tpass";
-            byte[] byKey = { };
-            byte[] IV = { 18, 52, 86, 120, 144, 171, 205, 239 };
-            byKey = System.Text.Encoding.UTF8.GetBytes(EncrptKey.Substring(0, 8));
-            DESCryptoServiceProvider des = new DESCryptoServiceProvider();
-            byte[] inputByteArray = Encoding.UTF8.GetBytes(str);
-            MemoryStream ms = new MemoryStream();
-            CryptoStream cs = new CryptoStream(ms, des.CreateEncryptor(byKey, IV), CryptoStreamMode.Write);
-            cs.Write(inputByteArray, 0, inputByteArray.Length);
-            cs.FlushFinalBlock();
-            return Convert.ToBase64String(ms.ToArray());
+            byte[] b = System.Text.ASCIIEncoding.ASCII.GetBytes(str);
+            string encrypted = Convert.ToBase64String(b);
+            return encrypted;
         }
 
         /// <summary>
@@ -322,23 +351,61 @@ namespace DAO
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
+        //public static string Decrypt(string str)
+        //{
+        //    str = str.Replace(" ", "+");
+        //    string DecryptKey = "r00tpass";
+        //    byte[] byKey = { };
+        //    byte[] IV = { 18, 52, 86, 120, 144, 171, 205, 239 };
+        //    byte[] inputByteArray = new byte[str.Length];
+
+        //    byKey = System.Text.Encoding.UTF8.GetBytes(DecryptKey.Substring(0, 8));
+        //    DESCryptoServiceProvider des = new DESCryptoServiceProvider();
+        //    inputByteArray = Convert.FromBase64String(str.Replace(" ", "+"));
+        //    MemoryStream ms = new MemoryStream();
+        //    CryptoStream cs = new CryptoStream(ms, des.CreateDecryptor(byKey, IV), CryptoStreamMode.Write);
+        //    cs.Write(inputByteArray, 0, inputByteArray.Length);
+        //    cs.FlushFinalBlock();
+        //    System.Text.Encoding encoding = System.Text.Encoding.UTF8;
+        //    return encoding.GetString(ms.ToArray());
+        //}
+
+        //public static string Decrypt(string cipherText)
+        //{
+        //    string EncryptionKey = "MAKV2SPBNI99212";
+        //    byte[] cipherBytes = Convert.FromBase64String(cipherText);
+        //    using (Aes encryptor = Aes.Create())
+        //    {
+        //        Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(EncryptionKey, new byte[] { 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76 });
+        //        encryptor.Key = pdb.GetBytes(32);
+        //        encryptor.IV = pdb.GetBytes(18);
+        //        using (MemoryStream ms = new MemoryStream())
+        //        {
+        //            using (CryptoStream cs = new CryptoStream(ms, encryptor.CreateDecryptor(), CryptoStreamMode.Write))
+        //            {
+        //                cs.Write(cipherBytes, 0, cipherBytes.Length);
+        //                cs.Close();
+        //            }
+        //            cipherText = Encoding.Unicode.GetString(ms.ToArray());
+        //        }
+        //    }
+        //    return cipherText;
+        //}
+
         public static string Decrypt(string str)
         {
-            str = str.Replace(" ", "+");
-            string DecryptKey = "r00tpass";
-            byte[] byKey = { };
-            byte[] IV = { 18, 52, 86, 120, 144, 171, 205, 239 };
-            byte[] inputByteArray = new byte[str.Length];
-
-            byKey = System.Text.Encoding.UTF8.GetBytes(DecryptKey.Substring(0, 8));
-            DESCryptoServiceProvider des = new DESCryptoServiceProvider();
-            inputByteArray = Convert.FromBase64String(str.Replace(" ", "+"));
-            MemoryStream ms = new MemoryStream();
-            CryptoStream cs = new CryptoStream(ms, des.CreateDecryptor(byKey, IV), CryptoStreamMode.Write);
-            cs.Write(inputByteArray, 0, inputByteArray.Length);
-            cs.FlushFinalBlock();
-            System.Text.Encoding encoding = System.Text.Encoding.UTF8;
-            return encoding.GetString(ms.ToArray());
+            byte[] b;
+            string decrypted;
+            try
+            {
+                b = Convert.FromBase64String(str);
+                decrypted = System.Text.ASCIIEncoding.ASCII.GetString(b);
+            }
+            catch (FormatException fe)
+            {
+                decrypted = "";
+            }
+            return decrypted;
         }
     }
 }

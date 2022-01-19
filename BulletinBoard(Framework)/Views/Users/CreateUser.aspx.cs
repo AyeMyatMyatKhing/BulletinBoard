@@ -42,7 +42,7 @@ namespace BulletinBoard_Framework_.Views.Users
                 string Image = "~/profile/" + str.ToString();
                 user.Name = txtName.Text.ToString();
                 user.Email = txtEmail.Text.ToString();
-                user.Password = txtPassword.Text.ToString();
+                user.Password = DAO.CommonDao.Encrypt(txtPassword.Text.ToString());
                 user.Profile = Image;
                 user.Type = DropDownList1.SelectedItem.Value.ToString();
                 user.Phone = int.Parse(txtPhone.Text.ToString());

@@ -37,8 +37,8 @@ namespace BulletinBoard_Framework_
         /// <param name="e"></param>
         protected void btnlogin_Click(object sender, EventArgs e)
         {
-            user.Email = Convert.ToString(txtemail.Text);
-            user.Password = Convert.ToString(txtpwd.Text);
+            user.Email = txtemail.Text.ToString();
+            user.Password = DAO.CommonDao.Encrypt(txtpwd.Text.ToString());
             dt = Services.User.UserServices.GetPostList(user);
             if (dt.Rows.Count > 0)
             {
