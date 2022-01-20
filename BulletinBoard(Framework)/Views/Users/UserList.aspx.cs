@@ -112,7 +112,5 @@ namespace BulletinBoard_Framework_.Views.Users
             this.GetUserData();
         }
         #endregion
-
-
     }
 }

@@ -35,11 +35,6 @@
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:CommandField ShowDeleteButton="true" ButtonType="Button"/>
-                    <asp:TemplateField>
-                        <ItemTemplate>
-                             <asp:Button runat="server" Text="View" CommandName="ViewButton" CommandArgument="<%#((GridViewRow)Container).RowIndex %>"/>
-                        </ItemTemplate>
-                    </asp:TemplateField>
             </Columns>
         </asp:GridView>
         </div>

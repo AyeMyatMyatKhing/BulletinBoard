@@ -22,7 +22,7 @@
             <div class="RightNavbar" style="margin-left:56%">
                 <ul >
                     <li>
-                       <asp:LinkButton ID="UserName" runat="server" class="link"></asp:LinkButton>
+                       <asp:LinkButton ID="UserName" runat="server" class="link" OnClick="UserName_Click"></asp:LinkButton>
                     </li>
                     <li>
                       <asp:LinkButton ID="LinkButton3" runat="server" class="link" OnClick="LinkButton3_Click">Logout</asp:LinkButton>

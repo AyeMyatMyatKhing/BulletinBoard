@@ -45,7 +45,7 @@ namespace BulletinBoard_Framework_.Views.Main
         {
             userEntity.Id = int.Parse(Session["user.Id"].ToString());
             dt = Services.User.UserServices.GetUserData(userEntity);
-            UserName.Text = dt.Rows[0][0].ToString();
+            UserName.Text = dt.Rows[0]["name"].ToString();
         }
         #endregion
 
@@ -141,6 +141,11 @@ namespace BulletinBoard_Framework_.Views.Main
         {
             GridView1.PageIndex = e.NewPageIndex;
             this.GetData();
+        }
+
+        protected void UserName_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("~/Views/Users/UserProfile.aspx");
         }
     }
 }

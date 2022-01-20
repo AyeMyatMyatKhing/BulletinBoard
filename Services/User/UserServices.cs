@@ -22,7 +22,6 @@ namespace Services.User
             {
                 var dt = new DAO.Users.UserDao();
                 return DAO.Users.UserDao.Insert(user);
-
             }
             catch (Exception ex)
             {

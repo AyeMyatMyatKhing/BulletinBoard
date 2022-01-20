@@ -35,10 +35,10 @@ namespace BulletinBoard_Framework_.Views.Users
             dt = Services.User.UserServices.GetUserData(user);
             if (dt.Rows.Count > 0)
             {
-                txtname.Text = dt.Rows[0][0].ToString();
-                txtemail.Text = dt.Rows[0][1].ToString();
-                txtphone.Text = dt.Rows[0][2].ToString();
-                txtaddr.Text = dt.Rows[0][3].ToString();
+                txtname.Text = dt.Rows[0]["name"].ToString();
+                txtemail.Text = dt.Rows[0]["email"].ToString();
+                txtphone.Text = dt.Rows[0]["phone"].ToString();
+                txtaddr.Text = dt.Rows[0]["address"].ToString();
             }
         }
         #endregion

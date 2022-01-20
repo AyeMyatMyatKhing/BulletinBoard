@@ -143,7 +143,7 @@ namespace DAO.Users
             {
                 var arr = new object[2];
                 arr[0] = user.Id;
-                var dt = CommonDao.GetEditData(arr, "select name,email,phone,address from users where id=@1", CommandType.Text);
+                var dt = CommonDao.GetEditData(arr, "select * from users where id=@1", CommandType.Text);
                 return dt;
             }
             catch (Exception ex)
