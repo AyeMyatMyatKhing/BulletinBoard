@@ -151,6 +151,26 @@ namespace DAO.Users
                 throw ex;
             }
         }
+
+        /// <summary>
+        /// get user name and password for reset password
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        public static DataTable ResetPassword(UserEntities user)
+        {
+            try
+            {
+                var arr = new object[2];
+                arr[0] = user.Email;
+                var dt = CommonDao.GetEditData(arr, "select name,password from users where email=@1", CommandType.Text);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         #endregion
     }
 }

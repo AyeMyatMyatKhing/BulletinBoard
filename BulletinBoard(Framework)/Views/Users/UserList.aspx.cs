@@ -100,9 +100,8 @@ namespace BulletinBoard_Framework_.Views.Users
                 Response.Redirect("EditUser.aspx?id=" + user.Id);
             }
         }
-        #endregion
 
-        protected void btnBack_Click(object sender, EventArgs e)
+       protected void btnBack_Click(object sender, EventArgs e)
         {
             Server.Transfer("~/Views/Main/CommonHeader.aspx");
         }
@@ -112,5 +111,20 @@ namespace BulletinBoard_Framework_.Views.Users
             GridView1.PageIndex = e.NewPageIndex;
             this.GetUserData();
         }
+
+        protected void On_RowCommand(object sender , GridViewCommandEventArgs e)
+        {
+            if(e.CommandName == "ViewButton")
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
+                GridViewRow row = GridView1.Rows[index];
+                user.Id = Convert.ToInt32(row.Cells[0].Text);
+                Response.Redirect("UserProfile.aspx?id=" + user.Id);
+            }
+        }
+
+        #endregion
+
+
     }
 }

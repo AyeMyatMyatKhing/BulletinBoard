@@ -108,6 +108,23 @@ namespace Services.User
                 throw ex;
             }
         }
+
+        /// <summary>
+        /// get user name and password for reset password
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        public static DataTable ResetPassword(UserEntities user)
+        {
+            try
+            {
+                return DAO.Users.UserDao.ResetPassword(user);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         #endregion
     }
 }

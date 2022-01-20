@@ -13,7 +13,7 @@
             <h2>User List&nbsp;
                 <asp:Button ID="btnBack" runat="server" Text="Back" class="button" OnClick="btnBack_Click"/>
             </h2>
-            <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" AutoGenerateColumns="False" OnRowDataBound="GridView1_RowDataBound" OnRowDeleting="GridView1_RowDeleting" DataKeyNames="id" OnRowCommand="GridView1_RowCommand" Width="800px" AllowPaging="true" PageIndex="10" OnPageIndexChanging="GridView1_PageIndexChanging" >
+            <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" AutoGenerateColumns="False" OnRowDataBound="GridView1_RowDataBound" OnRowDeleting="GridView1_RowDeleting" DataKeyNames="id" OnRowCommand="GridView1_RowCommand" Width="800px" AllowPaging="true" PageIndex="10" OnPageIndexChanging="GridView1_PageIndexChanging" OnRowCommand="On_RowCommand">
             <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
             <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
             <PagerStyle ForeColor="#003399" HorizontalAlign="Left" BackColor="#99CCCC" />
@@ -35,6 +35,11 @@
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:CommandField ShowDeleteButton="true" ButtonType="Button"/>
+                    <asp:TemplateField>
+                        <ItemTemplate>
+                             <asp:Button runat="server" Text="View" CommandName="ViewButton" CommandArgument="<%#((GridViewRow)Container).RowIndex %>"/>
+                        </ItemTemplate>
+                    </asp:TemplateField>
             </Columns>
         </asp:GridView>
         </div>

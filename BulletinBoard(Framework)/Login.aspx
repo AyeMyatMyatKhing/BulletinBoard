@@ -48,11 +48,11 @@
                <tr>
                    <td></td>
                    <td>
-                       <asp:LinkButton ID="forgotPassword" runat="server">forgot password?</asp:LinkButton>
+                       <asp:LinkButton ID="forgotPassword" runat="server" OnClick="forgotPassword_Click">forgot password?</asp:LinkButton>
                    </td>
                </tr>
             <tr>
-                <td class="auto-style3">    </td>
+                <td class="auto-style3"></td>
                 <td class="auto-style3">
                     <asp:Button ID="btnlogin" runat="server" OnClick="btnlogin_Click" Text="LogIn" class="button" />
 &nbsp;
