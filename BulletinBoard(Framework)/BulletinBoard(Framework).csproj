@@ -84,6 +84,7 @@
     <Content Include="Views\Main\CommonHeader.aspx" />
     <Content Include="Views\Posts\EditPost.aspx" />
     <Content Include="Views\Posts\PostCreate.aspx" />
+    <Content Include="Views\Users\ChangePassword.aspx" />
     <Content Include="Views\Users\CreateUser.aspx" />
     <Content Include="Views\Users\EditUser.aspx" />
     <Content Include="Views\Users\UserList.aspx" />
@@ -126,6 +127,13 @@
     </Compile>
     <Compile Include="Views\Posts\PostCreate.aspx.designer.cs">
       <DependentUpon>PostCreate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Users\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Users\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Users\CreateUser.aspx.cs">
       <DependentUpon>CreateUser.aspx</DependentUpon>

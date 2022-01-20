@@ -37,8 +37,11 @@ namespace BulletinBoard_Framework_.Views.Users
             {
                 txtname.Text = dt.Rows[0]["name"].ToString();
                 txtemail.Text = dt.Rows[0]["email"].ToString();
+                DropDownList1.Text = Convert.ToString(dt.Rows[0]["type"]);
                 txtphone.Text = dt.Rows[0]["phone"].ToString();
+                txtDob.Text = Convert.ToString(dt.Rows[0]["dob"]);
                 txtaddr.Text = dt.Rows[0]["address"].ToString();
+                profile.ImageUrl = Convert.ToString(dt.Rows[0]["profile"]);
             }
         }
         #endregion
@@ -59,17 +62,23 @@ namespace BulletinBoard_Framework_.Views.Users
         /// <param name="e"></param>
         protected void btnconfirm_Click(object sender, EventArgs e)
         {
+            //string str = profileUpload.FileName;
+            //profileUpload.PostedFile.SaveAs(Server.MapPath("~/profile/" + str));
+            //string Image = "~/profile/" + str.ToString();
             user.Name = txtname.Text;
             user.Email = txtemail.Text;
+            user.Type = Convert.ToString(DropDownList1.SelectedItem.Value);
             user.Phone = int.Parse(txtphone.Text);
+            user.Dateofbirth = DateTime.Parse(txtDob.Text);
             user.Address = txtaddr.Text;
+            //user.Profile = Image;
             user.Id = int.Parse(Request.QueryString["id"].ToString());
             bool update = Services.User.UserServices.Update(user);
             if (update == true)
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "ShowSuccess", "javascript:alert('Data updated successfully');", true);
+                Response.Redirect("UserList.aspx");
             }
-            Response.Redirect("UserList.aspx");
         }
 
         /// <summary>
@@ -82,5 +91,10 @@ namespace BulletinBoard_Framework_.Views.Users
             Response.Redirect("UserList.aspx");
         }
         #endregion
+
+        protected void changePwd_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("~/Views/Users/ChangePassword.aspx");
+        }
     }
 }

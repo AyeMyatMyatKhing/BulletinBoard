@@ -58,7 +58,7 @@ namespace DAO.Users
         {
             try
             {
-                return CommonDao.GetData("select id,name,email,phone,address from users where is_delete=0", CommandType.Text);
+                return CommonDao.GetData("select * from users where is_delete=0", CommandType.Text);
             }
             catch (Exception ex)
             {
@@ -95,13 +95,16 @@ namespace DAO.Users
         {
             try
             {
-                var arr = new object[6];
+                var arr = new object[8];
                 arr[0] = user.Name;
                 arr[1] = user.Email;
-                arr[2] = user.Phone;
-                arr[3] = user.Address;
-                arr[4] = user.Id;
-                CommonDao.Update("Update users set name=@1,email=@2,phone=@3,address=@4 where id=@5", arr);
+                arr[2] = user.Type;
+                arr[3] = user.Phone;
+                arr[4] = user.Dateofbirth;
+                arr[5] = user.Address;
+                //arr[6] = user.Profile;
+                arr[6] = user.Id;
+                CommonDao.Update("Update users set name=@1,email=@2,type=@3,phone=@4,dob=@5,address=@6 where id=@7", arr);
                 return true;
             }
             catch (Exception ex)

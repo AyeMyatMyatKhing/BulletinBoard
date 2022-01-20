@@ -24,19 +24,14 @@
         .auto-style6 {
             height: 51px;
         }
-        .auto-style7 {
-            width: 450px;
-        }
+        .auto-style8 {
+        height: 45px;
+    }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="post">
-            <div class="auto-style7">
-                <%-- <asp:Label ID="Label8" runat="server" Font-Bold="True" Font-Size="Large" Text="Edit User"></asp:Label>
-                 <asp:Image ID="profile" runat="server" Height="100px" Width="100px" style="float:right" ImageUrl ='"image.ashx?id="+id'/>--%>
-             <%--   <img  alt="profile" src="image. ?id=<%#Eval("id") %>" style="float:right;width:100px;height:100px"/>--%>
-            </div>
              <table class="auto-style1">
                  <tr>
                      <td colspan="2">
@@ -63,14 +58,32 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="auto-style4">
+                        <asp:Label ID="Label3" runat="server" Text="Type"></asp:Label>
+                    </td>
+                    <td class="auto-style4">
+                        <asp:DropDownList ID="DropDownList1" runat="server">
+                            <asp:ListItem>admin</asp:ListItem>
+                            <asp:ListItem>user</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
                     <td class="auto-style3">
                         <asp:Label ID="Label4" runat="server" Text="Phone" ></asp:Label>
                     </td>
                     <td class="auto-style4">
                         <asp:TextBox ID="txtphone" runat="server" class="textbox" TextMode="Phone"></asp:TextBox>
-                        <%--<asp:RegularExpressionValidator ID="ValidatePhone" runat="server" Display="Dynamic" Text="RegularExpressionError" ControlToValidate="txtPhone" ValidationExpression="[0-9]{10}" ForeColor="red"></asp:RegularExpressionValidator>--%>
                     </td>
                 </tr>
+                 <tr>
+                     <td class="auto-style6">
+                         <asp:Label ID="Label1" runat="server" Text="Date of birth"></asp:Label>
+                     </td>
+                     <td class="auto-style6">
+                         <asp:TextBox ID="txtDob" runat="server" class="textbox"></asp:TextBox>
+                     </td>
+                 </tr>
                 <tr>
                     <td class="auto-style3">
                         <asp:Label ID="Label6" runat="server" Text="Address"></asp:Label>
@@ -80,13 +93,32 @@
                         <asp:RegularExpressionValidator runat="server" ID="RegularExpressionValidator3" ControlToValidate="txtaddr" ValidationExpression="[\s\S]{0,50}" ErrorMessage="Only 50 characters are allowed" ForeColor="red" Display="Dynamic"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
-                <tr>
+                 <tr>
+                     <td class="auto-style4">
+                         <asp:Label ID="Label5" runat="server" Text="Profile"></asp:Label>
+                     </td>
+                     <td class="auto-style4">
+                         <asp:FileUpload ID="profileUpload" runat="server" class="textbox"/>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td></td>
+                     <td>
+                          <asp:Image ID="profile" runat="server" Height="90px" Width="90px"/>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td colspan="2" class="auto-style8">
+                         <asp:LinkButton ID="changePwd" runat="server" OnClick="changePwd_Click">Change Password</asp:LinkButton>
+                     </td>
+                 </tr>
+                 <tr>
                     <td class="auto-style3" colspan="2">
                         <asp:Button ID="btnconfirm" runat="server" OnClick="btnconfirm_Click" Text="Confirm"  class="button"/>
 &nbsp;
                         <asp:Button ID="btncancel" runat="server" Text="Cancel" class="button" OnClick="btncancel_Click" />
                     </td>
-                </tr>
+                 </tr>
             </table>
         </div>
     </form>
