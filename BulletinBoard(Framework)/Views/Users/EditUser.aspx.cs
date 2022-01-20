@@ -62,16 +62,16 @@ namespace BulletinBoard_Framework_.Views.Users
         /// <param name="e"></param>
         protected void btnconfirm_Click(object sender, EventArgs e)
         {
-            //string str = profileUpload.FileName;
-            //profileUpload.PostedFile.SaveAs(Server.MapPath("~/profile/" + str));
-            //string Image = "~/profile/" + str.ToString();
+            string str = profileUpload.FileName;
+            profileUpload.PostedFile.SaveAs(Server.MapPath("~/profile/" + str));
+            string Image = "~/profile/" + str.ToString();
             user.Name = txtname.Text;
             user.Email = txtemail.Text;
             user.Type = Convert.ToString(DropDownList1.SelectedItem.Value);
             user.Phone = int.Parse(txtphone.Text);
             user.Dateofbirth = DateTime.Parse(txtDob.Text);
             user.Address = txtaddr.Text;
-            //user.Profile = Image;
+            user.Profile = Image;
             user.Id = int.Parse(Request.QueryString["id"].ToString());
             bool update = Services.User.UserServices.Update(user);
             if (update == true)

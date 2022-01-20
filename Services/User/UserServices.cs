@@ -21,7 +21,7 @@ namespace Services.User
             try
             {
                 var dt = new DAO.Users.UserDao();
-                return DAO.Users.UserDao.Insert(user);
+                return DAO.Users.UserDao.InsertData(user);
             }
             catch (Exception ex)
             {

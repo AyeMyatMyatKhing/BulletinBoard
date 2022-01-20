@@ -80,13 +80,6 @@ namespace BulletinBoard_Framework_.Views.Users
             {
                 Response.Write("<script>alert('Data inserted!')</script>");
             }
-            txtName.Text  = "";
-            txtEmail.Text = "";
-            txtPassword.Text = "";
-            txtRePassword.Text = "";
-            txtPhone.Text = "";
-            txtAddress.Text = "";
-            txtDob.Text = "";
         }
 
         /// <summary>

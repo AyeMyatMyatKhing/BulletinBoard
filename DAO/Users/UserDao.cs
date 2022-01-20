@@ -16,7 +16,7 @@ namespace DAO.Users
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
-        public static int Insert(UserEntities user)
+        public static int InsertData(UserEntities user)
         {
             try
             {
@@ -36,9 +36,8 @@ namespace DAO.Users
                 arr[12] = user.Updatedat;
                 arr[13] = user.Deletedat;
                 arr[14] = user.Isdelete;
-
-                int id = (int)CommonDao.Insert(arr, "name,email,password,profile,type,phone,address,dob,create_user_id,updated_user_id,deleted_user_id,created_at,updated_at,deleted_at,is_delete", "users");
-                if (id != 0)
+                int id = (int)CommonDao.InsertData(arr, "insert into users values (@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14,@15)");
+                if(id != 0)
                 {
                     return id;
                 }

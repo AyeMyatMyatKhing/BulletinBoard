@@ -34,26 +34,26 @@ namespace Entities.User
         /// <summary>
         /// constructor and destructor for user variable
         /// </summary>
-        //public void UserData()
-        //{
-        //    _id = 0;
-        //    _name = String.Empty;
-        //    _email = String.Empty;
-        //    _password = String.Empty;
-        //    _profile = String.Empty;
-        //    _type = String.Empty;
-        //    _phone = 0;
-        //    _address = String.Empty;
-        //    _dateofbirth = DateTime.Now;
-        //    _createuserid = 1;
-        //    _updateduserid = 1;
-        //    _deleteduserid = 1;
-        //    _createdat = DateTime.Now;
-        //    _updatedat = DateTime.Now;
-        //    _deletedat = DateTime.Now;
-        //    _isdelete = 0;
+        public void UserData()
+        {
+            _id = 0;
+            _name = String.Empty;
+            _email = String.Empty;
+            _password = String.Empty;
+            _profile = String.Empty;
+            _type = String.Empty;
+            _phone = 0;
+            _address = String.Empty;
+            _dateofbirth = DateTime.Now;
+            _createuserid = 1;
+            _updateduserid = 1;
+            _deleteduserid = 1;
+            _createdat = DateTime.Now;
+            _updatedat = DateTime.Now;
+            _deletedat = DateTime.Now;
+            _isdelete = 0;
 
-        //}
+        }
 
         public void UserData(int id, string name, string email, string password, string profile, string type, int phone, string address, DateTime dateofbirth, int createduserid, int updateduserid, int deleteduserid, DateTime createdat, DateTime updatedat, DateTime deletedat, int is_delete)
         {
