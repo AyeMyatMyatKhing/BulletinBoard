@@ -165,7 +165,7 @@ namespace DAO.Users
                 var arr = new object[3];
                 arr[0] = user.Password;
                 arr[1] = user.Id;
-                CommonDao.Update("update users set password=@password where password=@1 and id=@2", arr);
+                CommonDao.Update("update users set password=@1 where id=@2", arr);
                 return true;
             }
             catch (Exception ex)

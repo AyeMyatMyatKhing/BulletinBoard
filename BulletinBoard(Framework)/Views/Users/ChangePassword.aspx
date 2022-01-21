@@ -52,14 +52,14 @@
                     <td class="auto-style2">
                         <asp:TextBox ID="txtConfirmNewpass" runat="server" class="textbox"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredConfirmPassword" ErrorMessage="*" runat="server" ControlToValidate="txtConfirmNewpass" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
-                         <asp:CompareValidator ID="ComparePassword" runat="server" ControlToCompare="txtPassword" ControlToValidate="txtConfirmNewpass" Display="Dynamic" ErrorMessage="Password do not match." ForeColor="Red"></asp:CompareValidator>
+                         <asp:CompareValidator ID="ComparePassword" runat="server" ControlToCompare="txtNewpass" ControlToValidate="txtConfirmNewpass" Display="Dynamic" ErrorMessage="Password do not match." ForeColor="Red"></asp:CompareValidator>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style3"></td>
                     <td class="auto-style3">
                         <asp:Button ID="btnChange" runat="server" Text="Change" class="button" OnClick="btnChange_Click"/>
-                        <asp:Button ID="btnClear" runat="server" Text="Clear" class="button" OnClick="btnClear_Click"/>
+                        <asp:Button ID="btnCancel" runat="server" Text="Cancel" class="button" OnClick="btnClear_Click" CausesValidation="false"/>
                     </td>
                 </tr>
             </table>

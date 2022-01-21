@@ -29,12 +29,28 @@ namespace BulletinBoard_Framework_.Views.Users
 
         protected void btnChange_Click(object sender, EventArgs e)
         {
-
+            string OldPassword = DAO.CommonDao.Encrypt(txtOldpass.Text.ToString());
+            userEntity.Id = int.Parse(Session["user.Id"].ToString());
+            dt = Services.User.UserServices.GetUserData(userEntity);
+            userEntity.Password = dt.Rows[0]["password"].ToString();
+            if(OldPassword == userEntity.Password)
+            {
+                bool update = Services.User.UserServices.ChangePassword(userEntity);
+                if(update == true)
+                {
+                    userEntity.Password = DAO.CommonDao.Encrypt(txtNewpass.Text.ToString());
+                    Response.Write("<script>alert('Password changed successfully!')</script>");
+                }               
+            }
+            else
+            {
+                Response.Write("<script>alert('Please enter valid password.')</script>");
+            }
         }
 
         protected void btnClear_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/Users/EditUser.aspx");
+            Server.Transfer("~/Views/Users/EditUser.aspx");
         }
         #endregion
     }

@@ -31,7 +31,7 @@ namespace BulletinBoard_Framework_.Views.Users
         /// </summary>
         public void BindTextBoxvalues()
         {
-            user.Id = int.Parse(Request.QueryString["id"].ToString());
+            user.Id = int.Parse(Session["user.Id"].ToString());
             dt = Services.User.UserServices.GetUserData(user);
             if (dt.Rows.Count > 0)
             {
@@ -90,11 +90,12 @@ namespace BulletinBoard_Framework_.Views.Users
         {
             Server.Transfer("UserList.aspx");
         }
-        #endregion
 
         protected void changePwd_Click(object sender, EventArgs e)
         {
-            Server.Transfer("~/Views/Users/ChangePassword.aspx");
+            user.Id = int.Parse(Session["user.Id"].ToString());
+            Response.Redirect("~/Views/Users/ChangePassword.aspx?id="+user.Id);
         }
+        #endregion
     }
 }

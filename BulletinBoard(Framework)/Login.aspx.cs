@@ -62,5 +62,10 @@ namespace BulletinBoard_Framework_
             Response.Redirect("Login.aspx");
         }
         #endregion
+
+        protected void register_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Views/Users/CreateUser.aspx");
+        }
     }
 }

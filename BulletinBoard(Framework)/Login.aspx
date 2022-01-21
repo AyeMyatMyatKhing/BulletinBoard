@@ -53,6 +53,11 @@
                     <asp:Button ID="btncancel" runat="server" Text="Cancel" class="button" OnClick="btncancel_Click" />
                 </td>
             </tr>
+            <tr>
+                <td colspan="2">
+                    <h4>If don't have an account please <asp:LinkButton ID="register" runat="server" OnClick="register_Click">register </asp:LinkButton>first.</h4>
+                </td>
+            </tr>
         </table>
         </div>
        

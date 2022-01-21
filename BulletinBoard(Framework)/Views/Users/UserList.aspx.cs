@@ -96,8 +96,8 @@ namespace BulletinBoard_Framework_.Views.Users
             {
                 int index = Convert.ToInt32(e.CommandArgument);
                 GridViewRow row = GridView1.Rows[index];
-                user.Id = Convert.ToInt32(row.Cells[0].Text);
-                Response.Redirect("EditUser.aspx?id=" + user.Id);
+                Session["user.Id"] = Convert.ToInt32(row.Cells[0].Text);
+                Response.Redirect("EditUser.aspx?id=" + Session["user.Id"]);
             }
         }
 
