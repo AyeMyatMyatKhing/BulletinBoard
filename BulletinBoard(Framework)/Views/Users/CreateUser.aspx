@@ -58,7 +58,7 @@
                     <td class="auto-style3">
                         <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" class="textbox" MaxLength="30"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ErrorMessage="*" runat="server" Display="Dynamic" ControlToValidate="txtPassword" ForeColor="Red"></asp:RequiredFieldValidator>
-                         <asp:RegularExpressionValidator runat="server" ID="RegularExpressionValidator2" ControlToValidate="txtPassword" ValidationExpression="[\s\S]{0,50}" ErrorMessage="Only 50 characters are allowed" ForeColor="red" Display="Dynamic"></asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator runat="server" ID="RegularExpressionValidator2" ControlToValidate="txtPassword" ValidationExpression="^[a-zA-Z0-9'@&#.\s]{7,}$" ErrorMessage="Password must be at least 7 characters long" ForeColor="red" Display="Dynamic"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
                 <tr>
