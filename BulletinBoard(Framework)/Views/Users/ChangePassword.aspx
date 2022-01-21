@@ -52,8 +52,8 @@
                 <tr>
                     <td class="auto-style3"></td>
                     <td class="auto-style3">
-                        <asp:Button ID="btnChange" runat="server" Text="Change" class="button"/>
-                        <asp:Button ID="btnClear" runat="server" Text="Clear" class="button"/>
+                        <asp:Button ID="btnChange" runat="server" Text="Change" class="button" OnClick="btnChange_Click"/>
+                        <asp:Button ID="btnClear" runat="server" Text="Clear" class="button" OnClick="btnClear_Click"/>
                     </td>
                 </tr>
             </table>

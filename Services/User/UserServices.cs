@@ -113,11 +113,11 @@ namespace Services.User
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
-        public static DataTable ResetPassword(UserEntities user)
+        public static bool ChangePassword(UserEntities user)
         {
             try
             {
-                return DAO.Users.UserDao.ResetPassword(user);
+                return DAO.Users.UserDao.ChangePassword(user);
             }
             catch (Exception ex)
             {

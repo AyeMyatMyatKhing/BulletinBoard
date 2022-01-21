@@ -94,16 +94,15 @@ namespace DAO.Users
         {
             try
             {
-                var arr = new object[9];
+                var arr = new object[8];
                 arr[0] = user.Name;
                 arr[1] = user.Email;
                 arr[2] = user.Type;
                 arr[3] = user.Phone;
                 arr[4] = user.Dateofbirth;
                 arr[5] = user.Address;
-                arr[6] = user.Profile;
-                arr[7] = user.Id;
-                CommonDao.Update("Update users set name=@1,email=@2,type=@3,phone=@4,dob=@5,address=@6,profile=@7 where id=@8", arr);
+                arr[6] = user.Id;
+                CommonDao.Update("Update users set name=@1,email=@2,type=@3,phone=@4,dob=@5,address=@6 where id=@7", arr);
                 return true;
             }
             catch (Exception ex)
@@ -159,14 +158,15 @@ namespace DAO.Users
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
-        public static DataTable ResetPassword(UserEntities user)
+        public static bool ChangePassword(UserEntities user)
         {
             try
             {
-                var arr = new object[2];
-                arr[0] = user.Email;
-                var dt = CommonDao.GetEditData(arr, "select name,password from users where email=@1", CommandType.Text);
-                return dt;
+                var arr = new object[3];
+                arr[0] = user.Password;
+                arr[1] = user.Id;
+                CommonDao.Update("update users set password=@password where password=@1 and id=@2", arr);
+                return true;
             }
             catch (Exception ex)
             {

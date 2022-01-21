@@ -45,12 +45,6 @@
                     <asp:TextBox ID="txtpwd" runat="server" class="textbox"></asp:TextBox>
                 </td>
             </tr>
-               <tr>
-                   <td></td>
-                   <td>
-                       <asp:LinkButton ID="forgotPassword" runat="server" OnClick="forgotPassword_Click">forgot password?</asp:LinkButton>
-                   </td>
-               </tr>
             <tr>
                 <td class="auto-style3"></td>
                 <td class="auto-style3">

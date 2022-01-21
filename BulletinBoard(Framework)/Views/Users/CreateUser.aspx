@@ -101,7 +101,6 @@
                     <td class="auto-style3">
                         <asp:TextBox ID="txtAddress" runat="server" class="textbox" TextMode="MultiLine"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredAddress" ErrorMessage="*" Display="Dynamic" runat="server" ControlToValidate="txtAddress" ForeColor="Red"></asp:RequiredFieldValidator>
-                         <asp:RegularExpressionValidator runat="server" ID="RegularExpressionValidator3" ControlToValidate="txtAddress" ValidationExpression="[\s\S]{0,50}" ErrorMessage="Only 50 characters are allowed" ForeColor="red" Display="Dynamic"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
                 <tr>
