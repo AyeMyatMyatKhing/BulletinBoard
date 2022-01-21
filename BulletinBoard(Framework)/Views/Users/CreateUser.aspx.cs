@@ -56,9 +56,6 @@ namespace BulletinBoard_Framework_.Views.Users
                 user.Deletedat = DateTime.Now;
                 user.Isdelete = 0;
             }
-            //int len = uploadProfile.PostedFile.ContentLength;
-            //byte[] pic = new byte[len + 1];
-            //uploadProfile.PostedFile.InputStream.Read(pic, 0, len);
         }
         #endregion
 

@@ -62,10 +62,5 @@ namespace BulletinBoard_Framework_
             Response.Redirect("Login.aspx");
         }
         #endregion
-
-        protected void forgotPassword_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/ForgotPassword.aspx");
-        }
     }
 }

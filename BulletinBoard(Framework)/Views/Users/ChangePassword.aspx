@@ -31,6 +31,8 @@
                     </td>
                     <td class="auto-style2">
                         <asp:TextBox ID="txtOldpass" runat="server" class="textbox"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="OldPassValidator" ErrorMessage="*" runat="server" Display="Dynamic" ControlToValidate="txtOldpass" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator runat="server" ID="RegularExpressionValidator2" ControlToValidate="txtOldpass" ValidationExpression="^[a-zA-Z0-9'@&#.\s]{7,}$" ErrorMessage="Password must be at least 7 characters long" ForeColor="red" Display="Dynamic"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
                 <tr>
@@ -39,6 +41,8 @@
                     </td>
                     <td class="auto-style2">
                         <asp:TextBox ID="txtNewpass" runat="server" class="textbox"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ErrorMessage="*" runat="server" Display="Dynamic" ControlToValidate="txtNewpass" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator runat="server" ID="RegularExpressionValidator1" ControlToValidate="txtNewpass" ValidationExpression="^[a-zA-Z0-9'@&#.\s]{7,}$" ErrorMessage="Password must be at least 7 characters long" ForeColor="red" Display="Dynamic"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
                 <tr>
@@ -47,6 +51,8 @@
                     </td>
                     <td class="auto-style2">
                         <asp:TextBox ID="txtConfirmNewpass" runat="server" class="textbox"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredConfirmPassword" ErrorMessage="*" runat="server" ControlToValidate="txtConfirmNewpass" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                         <asp:CompareValidator ID="ComparePassword" runat="server" ControlToCompare="txtPassword" ControlToValidate="txtConfirmNewpass" Display="Dynamic" ErrorMessage="Password do not match." ForeColor="Red"></asp:CompareValidator>
                     </td>
                 </tr>
                 <tr>

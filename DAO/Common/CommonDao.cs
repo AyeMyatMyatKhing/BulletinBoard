@@ -155,6 +155,13 @@ namespace DAO
             }
         }
 
+        /// <summary>
+        /// get data for edit
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <param name="commandText"></param>
+        /// <param name="commandType"></param>
+        /// <returns></returns>
         public static DataTable GetEditData(object[] arr, string commandText ,CommandType commandType)
         {
             SqlTransaction tran;
@@ -249,6 +256,12 @@ namespace DAO
             }
         }
 
+        /// <summary>
+        /// insert data
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <param name="InsertQuery"></param>
+        /// <returns></returns>
         public static int InsertData(object[] arr, string InsertQuery)
         {
             int Id = 0;

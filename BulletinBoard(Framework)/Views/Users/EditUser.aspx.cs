@@ -94,7 +94,7 @@ namespace BulletinBoard_Framework_.Views.Users
 
         protected void changePwd_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/Users/ChangePassword.aspx");
+            Server.Transfer("~/Views/Users/ChangePassword.aspx");
         }
     }
 }

@@ -27,14 +27,15 @@ namespace BulletinBoard_Framework_.Views.Posts
         Services.Post.PostServices postservice = new Services.Post.PostServices();
 
         /// <summary>
-        /// 
+        /// data table
         /// </summary>
         DataTable dt = new DataTable();
         #endregion
 
         #region=====Fill Data=====
-        /// insert post data
-        /// </summary>
+       /// <summary>
+       /// insert post data
+       /// </summary>
         private void InsertData()
         {
             post.Title = txtTitle.Text.ToString();
