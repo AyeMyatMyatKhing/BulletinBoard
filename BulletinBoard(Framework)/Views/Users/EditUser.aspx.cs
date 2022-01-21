@@ -62,6 +62,7 @@ namespace BulletinBoard_Framework_.Views.Users
         /// <param name="e"></param>
         protected void btnconfirm_Click(object sender, EventArgs e)
         {
+            user.Id = int.Parse(Request.QueryString["id"].ToString());
             string str = profileUpload.FileName;
             profileUpload.PostedFile.SaveAs(Server.MapPath("~/profile/" + str));
             string Image = "~/profile/" + str.ToString();
@@ -72,7 +73,6 @@ namespace BulletinBoard_Framework_.Views.Users
             user.Dateofbirth = DateTime.Parse(txtDob.Text);
             user.Address = txtaddr.Text;
             user.Profile = Image;
-            user.Id = int.Parse(Request.QueryString["id"].ToString());
             bool update = Services.User.UserServices.Update(user);
             if (update == true)
             {

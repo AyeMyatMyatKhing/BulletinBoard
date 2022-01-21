@@ -94,16 +94,16 @@ namespace DAO.Users
         {
             try
             {
-                var arr = new object[8];
+                var arr = new object[9];
                 arr[0] = user.Name;
                 arr[1] = user.Email;
                 arr[2] = user.Type;
                 arr[3] = user.Phone;
                 arr[4] = user.Dateofbirth;
                 arr[5] = user.Address;
-                //arr[6] = user.Profile;
-                arr[6] = user.Id;
-                CommonDao.Update("Update users set name=@1,email=@2,type=@3,phone=@4,dob=@5,address=@6 where id=@7", arr);
+                arr[6] = user.Profile;
+                arr[7] = user.Id;
+                CommonDao.Update("Update users set name=@1,email=@2,type=@3,phone=@4,dob=@5,address=@6,profile=@7 where id=@8", arr);
                 return true;
             }
             catch (Exception ex)
