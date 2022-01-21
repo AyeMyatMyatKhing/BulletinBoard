@@ -47,7 +47,7 @@ namespace BulletinBoard_Framework_.Views.Users
                 user.Type = DropDownList1.SelectedItem.Value.ToString();
                 user.Phone = int.Parse(txtPhone.Text.ToString());
                 user.Address = txtAddress.Text.ToString();
-                user.Dateofbirth = Convert.ToDateTime(txtDob.Text.ToString());
+                user.Dateofbirth = Convert.ToDateTime(txtDob.Text.ToString()).Date;
                 user.Createuserid = 1;
                 user.Updateduserid = 1;
                 user.Deleteduserid = 1;
@@ -79,6 +79,7 @@ namespace BulletinBoard_Framework_.Views.Users
             if (id > 0)
             {
                 Response.Write("<script>alert('Data inserted!')</script>");
+                Response.Redirect("~/Login.aspx");
             }
         }
 

@@ -145,7 +145,8 @@ namespace BulletinBoard_Framework_.Views.Main
 
         protected void UserName_Click(object sender, EventArgs e)
         {
-            Server.Transfer("~/Views/Users/UserProfile.aspx");
+            userEntity.Id = int.Parse(Session["user.Id"].ToString());
+            Server.Transfer("~/Views/Users/UserProfile.aspx?id=" + userEntity.Id);
         }
     }
 }

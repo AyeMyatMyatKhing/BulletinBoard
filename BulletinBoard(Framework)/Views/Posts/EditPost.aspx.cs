@@ -77,7 +77,7 @@ namespace BulletinBoard_Framework_.Views.Posts
         /// <param name="e"></param>
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            Server.Transfer("~/Views/Main/CommonHeader.aspx");
+            Response.Redirect("~/Views/Main/CommonHeader.aspx");
         }
         #endregion
     }

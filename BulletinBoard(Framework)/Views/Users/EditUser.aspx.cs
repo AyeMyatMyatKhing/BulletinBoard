@@ -39,7 +39,7 @@ namespace BulletinBoard_Framework_.Views.Users
                 txtemail.Text = dt.Rows[0]["email"].ToString();
                 DropDownList1.Text = Convert.ToString(dt.Rows[0]["type"]);
                 txtphone.Text = dt.Rows[0]["phone"].ToString();
-                txtDob.Text = Convert.ToString(dt.Rows[0]["dob"]);
+                txtDob.Text = Convert.ToDateTime(dt.Rows[0]["dob"]).ToString("MM-dd-yyyy");
                 txtaddr.Text = dt.Rows[0]["address"].ToString();
                 profile.ImageUrl = Convert.ToString(dt.Rows[0]["profile"]);
             }
@@ -88,7 +88,7 @@ namespace BulletinBoard_Framework_.Views.Users
         /// <param name="e"></param>
         protected void btncancel_Click(object sender, EventArgs e)
         {
-            Response.Redirect("UserList.aspx");
+            Server.Transfer("UserList.aspx");
         }
         #endregion
 

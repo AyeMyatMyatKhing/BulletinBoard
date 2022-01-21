@@ -63,8 +63,8 @@
                     </td>
                     <td class="auto-style4">
                         <asp:DropDownList ID="DropDownList1" runat="server">
-                            <asp:ListItem>admin</asp:ListItem>
-                            <asp:ListItem>user</asp:ListItem>
+                            <asp:ListItem>Admin</asp:ListItem>
+                            <asp:ListItem>User</asp:ListItem>
                         </asp:DropDownList>
                     </td>
                 </tr>
@@ -74,6 +74,7 @@
                     </td>
                     <td class="auto-style4">
                         <asp:TextBox ID="txtphone" runat="server" class="textbox" TextMode="Phone"></asp:TextBox>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="txtPhone" ErrorMessage="Invalid number." ForeColor="Red" ValidationExpression="^[0-9]*$" Display="Dynamic"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
                  <tr>
@@ -90,7 +91,6 @@
                     </td>
                     <td class="auto-style4">
                         <asp:TextBox ID="txtaddr" runat="server" class="textbox" TextMode="MultiLine"></asp:TextBox>
-                        <asp:RegularExpressionValidator runat="server" ID="RegularExpressionValidator3" ControlToValidate="txtaddr" ValidationExpression="[\s\S]{0,50}" ErrorMessage="Only 50 characters are allowed" ForeColor="red" Display="Dynamic"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
                  <tr>

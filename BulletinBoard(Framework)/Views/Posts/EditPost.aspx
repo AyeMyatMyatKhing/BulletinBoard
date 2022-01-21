@@ -47,7 +47,6 @@
                     <td class="auto-style3">
                         <asp:TextBox ID="txtDescription" runat="server" TextMode="MultiLine" class="textbox"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="Requireddescription" runat="server" ControlToValidate="txtDescription" ErrorMessage="*" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
-                        
                     </td>
                 </tr>
                 <tr>

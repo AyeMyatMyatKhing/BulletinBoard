@@ -31,14 +31,16 @@ namespace BulletinBoard_Framework_.Views.Users
                 lblEmail.Text = dt.Rows[0]["email"].ToString();
                 lblType.Text = Convert.ToString(dt.Rows[0]["type"]);
                 lblPhone.Text = dt.Rows[0]["phone"].ToString();
-                lblDob.Text = Convert.ToString(dt.Rows[0]["dob"]);
+                //DateTime t = dt.Rows[0]["dob"].Field<DateTime>("Date");
+                //lblDob.Text = Convert.ToString(t);
+                lblDob.Text = Convert.ToDateTime(dt.Rows[0]["dob"]).ToString("MM-dd-yyyy");
                 lblAddress.Text = dt.Rows[0]["address"].ToString();
             }
         }
 
         protected void Back_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/Main/CommonHeader.aspx");
+            Server.Transfer("~/Views/Main/CommonHeader.aspx");
         }
     }
 }
